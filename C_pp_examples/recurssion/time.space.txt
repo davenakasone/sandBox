@@ -1,0 +1,14 @@
+1 unit of time.... don't get into seconds, nano, ect
+time and space is one of the most important things you need to measure
+
+time is independent of the hardware, you have to look at basic repetitions. 
+it is all about the algoritm / procedure
+find the variable that time depends on   usually it is the list size
+degree / order     also O, Omget, Theta   asymptotic notations   
+you can meausre time complexiy from code or diagram   both should match
+
+no need to get into assembly operations...just count all as 1
+
+space is off of the variables, amounts, ect   don't get concerned with bytes
+
+make your theoretical time and space functions match actual performance

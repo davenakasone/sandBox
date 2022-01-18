@@ -1,0 +1,26 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7fa9bb4062c0 .scope module, "arrEx" "arrEx" 2 10;
+ .timescale -9 -9;
+v0x7fa9bb406210_0 .var "rA", 7 0;
+    .scope S_0x7fa9bb4062c0;
+T_0 ;
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x7fa9bb406210_0, 0, 8;
+    %vpi_call 2 19 "$write", "\012\012\011\011 ~ ~ ~ TEST COMPLETE ~ ~ ~\012\012" {0 0 0};
+    %delay 1000, 0;
+    %vpi_call 2 21 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "arrys.v";

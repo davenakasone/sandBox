@@ -1,0 +1,22 @@
+module clk_50MHz_to_1Hz ( 
+                            output reg clk_1hz,
+                            input wire clk_50mhz
+                        );
+
+    reg [24:0] count;    
+
+    initial begin
+        count <= 1'b0;
+        clk_1hz <= 1'b0;
+    end
+
+    always @ (posedge clk_50mhz) begin
+        if(count == 25'b1011111010111100000111111) begin
+            count <= 0;
+            clk_1hz <= ~clk_1hz;
+        end
+        else begin
+            count <= count + 1;
+        end
+    end
+endmodule

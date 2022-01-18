@@ -1,0 +1,64 @@
+Problem Description
+You will be using command-line arguments to supply two numbers for multiplication with a twist.
+
+That is, you will be comparing two algorithms used to multiply the two numbers without using the multiplication (*) operator. 
+
+The first method will be to use a for loop to repeatedly add the multiplicand to an accumulator "multiplier" times.
+For example, if you had 3 x 5, then three would be added to an accumulator 5 times.
+
+Output: the number of times the loop executed and the answer. 
+
+The second method would implement the Russian Multiplication algorithm described above. Again,
+
+Output: the number of times the loop executes and the answer.
+
+Your program will:
+
+Use a modular design with the following prototypes minimum:
+void runLoopMethod(long& multiplicand, long& multiplier,long& iterationCount, long& answer);
+void runRussianMethod(long& multiplicand, long& multiplier, long& iterationCount, long& answer);
+void printResult(long& iterationCount, long& answer);
+
+Use command-line arguments
+
+Error handling:
+If there are insufficient command-line arguments, message the user:
+Syntax error! Usage: extra01 int_1 int_2
+If the values of either argument are 0 or less, message the user:
+This program requires positive non-zero integers (floats will be truncated)
+
+If the data is acceptable, message the user:
+This program compares two multiplication methods 
+without using the multiplication operator...
+
+Writes a blank line below the message
+Outputs "For loop method..."
+Outputs the number of times the loop executes
+Outputs the results of multiplication using a for loop
+Writes a blank line
+Outputs "Russian Multiplication method..."
+Outputs the number of times the loop executes
+Outputs the results of multiplication using the Russian Multiplication approach described above. 
+user interaction and output must exactly match the sample interaction below
+
+
+Sample Interaction:
+
+./extra01 5278 3149587
+
+This program compares two multiplication methods that 
+doesn't use the multiplication operator...
+
+For loop method...
+The number of times through the loop: 3149587
+Answer: 16623520186
+
+Russian Multiplication method...
+The number of times through the loop: 13
+Answer: 16623520186
+Submission instructions
+Name your source code file extra01.cpp. Use astyle for formatting, if desired. Remember to document all identifiers.
+
+Use the following command to submit your solution:
+
+$ turnin -c cs135-_____ -p extra01 -v extra01.cpp

@@ -1,0 +1,580 @@
+$date
+	Fri Oct 15 02:13:17 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 1 ! y_xor $end
+$var wire 1 " y_or $end
+$var wire 1 # y_nxor $end
+$var wire 1 $ y_not $end
+$var wire 1 % y_nor $end
+$var wire 1 & y_nand $end
+$var wire 1 ' y_and $end
+$var reg 1 ( a_in $end
+$var reg 1 ) b_in $end
+$var integer 32 * idx [31:0] $end
+$scope module DUT_and $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 ' y_and $end
+$var wire 1 + ng_out $end
+$scope module to_AND_1 $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 + y_nand $end
+$upscope $end
+$scope module to_AND_2 $end
+$var wire 1 + a_in $end
+$var wire 1 + b_in $end
+$var wire 1 ' y_nand $end
+$upscope $end
+$upscope $end
+$scope module DUT_nand $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 & y_nand $end
+$upscope $end
+$scope module DUT_nor $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 % y_nor $end
+$var wire 1 , ng_out_3 $end
+$var wire 1 - ng_out_2 $end
+$var wire 1 . ng_out_1 $end
+$scope module to_NOR_1 $end
+$var wire 1 ( a_in $end
+$var wire 1 ( b_in $end
+$var wire 1 . y_nand $end
+$upscope $end
+$scope module to_NOR_2 $end
+$var wire 1 ) a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 - y_nand $end
+$upscope $end
+$scope module to_NOR_3 $end
+$var wire 1 . a_in $end
+$var wire 1 - b_in $end
+$var wire 1 , y_nand $end
+$upscope $end
+$scope module to_NOR_4 $end
+$var wire 1 , a_in $end
+$var wire 1 , b_in $end
+$var wire 1 % y_nand $end
+$upscope $end
+$upscope $end
+$scope module DUT_not $end
+$var wire 1 ( a_in $end
+$var wire 1 $ y_not $end
+$scope module to_NOT $end
+$var wire 1 ( a_in $end
+$var wire 1 ( b_in $end
+$var wire 1 $ y_nand $end
+$upscope $end
+$upscope $end
+$scope module DUT_nxor $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 # y_nxor $end
+$var wire 1 / ng_out_4 $end
+$var wire 1 0 ng_out_3 $end
+$var wire 1 1 ng_out_2 $end
+$var wire 1 2 ng_out_1 $end
+$scope module to_NXOR_1 $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 2 y_nand $end
+$upscope $end
+$scope module to_NXOR_2 $end
+$var wire 1 ( a_in $end
+$var wire 1 ( b_in $end
+$var wire 1 1 y_nand $end
+$upscope $end
+$scope module to_NXOR_3 $end
+$var wire 1 ) a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 0 y_nand $end
+$upscope $end
+$scope module to_NXOR_4 $end
+$var wire 1 1 a_in $end
+$var wire 1 0 b_in $end
+$var wire 1 / y_nand $end
+$upscope $end
+$scope module to_NXOR_5 $end
+$var wire 1 2 a_in $end
+$var wire 1 / b_in $end
+$var wire 1 # y_nand $end
+$upscope $end
+$upscope $end
+$scope module DUT_or $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 " y_or $end
+$var wire 1 3 ng_out_2 $end
+$var wire 1 4 ng_out_1 $end
+$scope module to_OR_1 $end
+$var wire 1 ( a_in $end
+$var wire 1 ( b_in $end
+$var wire 1 4 y_nand $end
+$upscope $end
+$scope module to_OR_2 $end
+$var wire 1 ) a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 3 y_nand $end
+$upscope $end
+$scope module to_OR_3 $end
+$var wire 1 4 a_in $end
+$var wire 1 3 b_in $end
+$var wire 1 " y_nand $end
+$upscope $end
+$upscope $end
+$scope module DUT_xor $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 ! y_xor $end
+$var wire 1 5 ng_out_3 $end
+$var wire 1 6 ng_out_2 $end
+$var wire 1 7 ng_out_1 $end
+$scope module to_NOR_1 $end
+$var wire 1 ( a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 7 y_nand $end
+$upscope $end
+$scope module to_NOR_2 $end
+$var wire 1 ( a_in $end
+$var wire 1 7 b_in $end
+$var wire 1 6 y_nand $end
+$upscope $end
+$scope module to_NOR_3 $end
+$var wire 1 7 a_in $end
+$var wire 1 ) b_in $end
+$var wire 1 5 y_nand $end
+$upscope $end
+$scope module to_NOR_4 $end
+$var wire 1 6 a_in $end
+$var wire 1 5 b_in $end
+$var wire 1 ! y_nand $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+17
+16
+x5
+14
+x3
+12
+11
+x0
+x/
+1.
+x-
+x,
+1+
+b0 *
+x)
+0(
+0'
+1&
+x%
+1$
+x#
+x"
+x!
+$end
+#5
+0%
+x'
+1,
+1/
+1"
+x!
+x+
+x&
+0.
+0$
+x2
+01
+04
+x7
+x6
+1(
+b1 *
+#10
+1%
+0'
+0,
+1#
+0/
+0"
+0!
+1.
+1$
+11
+14
+16
+1+
+1&
+1-
+12
+10
+13
+17
+15
+0(
+0)
+b0 *
+#15
+0%
+0#
+1,
+1/
+1"
+1!
+0-
+00
+03
+05
+1)
+b1 *
+#20
+0.
+0$
+01
+04
+06
+1-
+10
+13
+15
+1(
+0)
+b10 *
+#25
+0!
+1'
+1#
+16
+0+
+0&
+0-
+02
+00
+03
+07
+15
+1)
+b11 *
+#30
+1%
+0'
+0,
+0/
+0"
+1.
+1$
+11
+14
+1+
+1&
+1-
+12
+10
+13
+17
+0(
+0)
+b0 *
+#35
+0%
+0#
+1,
+1/
+1"
+1!
+0-
+00
+03
+05
+1)
+b1 *
+#40
+0.
+0$
+01
+04
+06
+1-
+10
+13
+15
+1(
+0)
+b10 *
+#45
+0!
+1'
+1#
+16
+0+
+0&
+0-
+02
+00
+03
+07
+15
+1)
+b11 *
+#50
+1%
+0'
+0,
+0/
+0"
+1.
+1$
+11
+14
+1+
+1&
+1-
+12
+10
+13
+17
+0(
+0)
+b0 *
+#55
+0%
+0#
+1,
+1/
+1"
+1!
+0-
+00
+03
+05
+1)
+b1 *
+#60
+0.
+0$
+01
+04
+06
+1-
+10
+13
+15
+1(
+0)
+b10 *
+#65
+0!
+1'
+1#
+16
+0+
+0&
+0-
+02
+00
+03
+07
+15
+1)
+b11 *
+#70
+1%
+0'
+0,
+0/
+0"
+1.
+1$
+11
+14
+1+
+1&
+1-
+12
+10
+13
+17
+0(
+0)
+b0 *
+#75
+0%
+0#
+1,
+1/
+1"
+1!
+0-
+00
+03
+05
+1)
+b1 *
+#80
+0.
+0$
+01
+04
+06
+1-
+10
+13
+15
+1(
+0)
+b10 *
+#85
+0!
+1'
+1#
+16
+0+
+0&
+0-
+02
+00
+03
+07
+15
+1)
+b11 *
+#90
+1%
+0'
+0,
+0/
+0"
+1.
+1$
+11
+14
+1+
+1&
+1-
+12
+10
+13
+17
+0(
+0)
+b0 *
+#95
+0%
+0#
+1,
+1/
+1"
+1!
+0-
+00
+03
+05
+1)
+b1 *
+#100
+0.
+0$
+01
+04
+06
+1-
+10
+13
+15
+1(
+0)
+b10 *
+#105
+0!
+1'
+1#
+16
+0+
+0&
+0-
+02
+00
+03
+07
+15
+1)
+b11 *
+#110
+1%
+0'
+0,
+0/
+0"
+1.
+1$
+11
+14
+1+
+1&
+1-
+12
+10
+13
+17
+0(
+0)
+b0 *
+#115
+0%
+0#
+1,
+1/
+1"
+1!
+0-
+00
+03
+05
+1)
+b1 *
+#120
+0.
+0$
+01
+04
+06
+1-
+10
+13
+15
+1(
+0)
+b10 *
+#125
+0!
+1'
+1#
+16
+0+
+0&
+0-
+02
+00
+03
+07
+15
+1)
+b11 *
+#130
+b100 *

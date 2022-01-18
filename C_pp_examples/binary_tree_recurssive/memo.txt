@@ -1,0 +1,20 @@
+this is just another way to perform the same operations
+
+inorder traversal, no recursion
+1) visit left sub-tree first
+2) visit the node
+3) visit right sub-tree
+
+                              60
+                        /            \
+                    70                 90
+                 /     \             /    \
+             20        55                  88
+           /   \     /   \                /  \
+          28
+        /  \
+
+keep following left link from root until it is nullptr
+back up, visit the parent, look at the right node
+since the links are only in one direction, save the sequence of parents before moving to the child
+also have to back-track in order  LIFO (use a stack)

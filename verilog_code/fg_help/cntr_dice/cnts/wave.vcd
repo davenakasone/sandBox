@@ -1,0 +1,174 @@
+$date
+	Tue Oct  5 11:17:13 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 3 ! count [2:0] $end
+$var reg 1 " clock $end
+$var reg 1 # up $end
+$var integer 32 $ idx [31:0] $end
+$scope module DUT $end
+$var wire 1 " clock $end
+$var wire 1 # up $end
+$var reg 3 % count [2:0] $end
+$var reg 3 & n_state [2:0] $end
+$var reg 3 ' state [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 '
+b1 &
+b1 %
+b0 $
+0#
+0"
+b1 !
+$end
+#5
+b110 &
+1"
+#10
+b1 $
+0"
+#15
+b110 '
+b110 !
+b110 %
+1"
+#20
+b10 $
+0"
+#25
+b101 &
+1"
+#30
+b11 $
+0"
+#35
+b101 '
+b101 !
+b101 %
+1"
+#40
+b100 $
+0"
+#45
+b100 &
+1"
+#50
+b101 $
+0"
+#55
+b100 '
+b100 !
+b100 %
+1"
+#60
+b110 $
+0"
+#65
+b11 &
+1"
+#70
+b111 $
+0"
+#75
+b11 '
+b11 !
+b11 %
+1"
+#80
+b1000 $
+0"
+#85
+b10 &
+1"
+#90
+b1001 $
+0"
+#95
+b10 '
+b10 !
+b10 %
+1"
+#100
+1#
+b0 $
+0"
+#105
+b11 &
+1"
+#110
+b1 $
+0"
+#115
+b11 '
+b11 !
+b11 %
+1"
+#120
+b10 $
+0"
+#125
+b100 &
+1"
+#130
+b11 $
+0"
+#135
+b100 '
+b100 !
+b100 %
+1"
+#140
+b100 $
+0"
+#145
+b101 &
+1"
+#150
+b101 $
+0"
+#155
+b101 '
+b101 !
+b101 %
+1"
+#160
+b110 $
+0"
+#165
+b110 &
+1"
+#170
+b111 $
+0"
+#175
+b110 '
+b110 !
+b110 %
+1"
+#180
+b1000 $
+0"
+#185
+b1 &
+1"
+#190
+b1001 $
+0"
+#195
+b1 '
+b1 !
+b1 %
+1"
+#200
+b1010 $
+0"

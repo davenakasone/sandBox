@@ -1,0 +1,126 @@
+$date
+	Mon Aug 30 22:57:53 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module barrel8_TB $end
+$var wire 8 ! outY [7:0] $end
+$var reg 1 " SEL $end
+$var reg 8 # inpX [7:0] $end
+$var integer 32 $ idx [31:0] $end
+$scope module DUT $end
+$var wire 8 % in_x [7:0] $end
+$var wire 1 " selector $end
+$var reg 8 & out_y [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11111111 &
+b11111111 %
+b0 $
+b11111111 #
+0"
+b11111111 !
+$end
+#5
+b1111111 !
+b1111111 &
+b1 $
+b1111111 #
+b1111111 %
+#10
+b111111 !
+b111111 &
+b10 $
+b111111 #
+b111111 %
+#15
+b11111 !
+b11111 &
+b11 $
+b11111 #
+b11111 %
+#20
+b1111 !
+b1111 &
+b100 $
+b1111 #
+b1111 %
+#25
+b111 !
+b111 &
+b101 $
+b111 #
+b111 %
+#30
+b11 !
+b11 &
+b110 $
+b11 #
+b11 %
+#35
+b1 !
+b1 &
+b111 $
+b1 #
+b1 %
+#40
+b1111111 !
+b1111111 &
+1"
+b0 $
+b11111111 #
+b11111111 %
+#45
+b111111 !
+b111111 &
+b1 $
+b1111111 #
+b1111111 %
+#50
+b11111 !
+b11111 &
+b10 $
+b111111 #
+b111111 %
+#55
+b1111 !
+b1111 &
+b11 $
+b11111 #
+b11111 %
+#60
+b111 !
+b111 &
+b100 $
+b1111 #
+b1111 %
+#65
+b11 !
+b11 &
+b101 $
+b111 #
+b111 %
+#70
+b1 !
+b1 &
+b110 $
+b11 #
+b11 %
+#75
+b0 !
+b0 &
+b111 $
+b1 #
+b1 %
+#80
+b1000 $
+b0 #
+b0 %
+#85

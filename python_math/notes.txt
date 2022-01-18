@@ -1,0 +1,29 @@
+{page 32, create graph}
+
+the python way to make a package is to put empty "__init__.py" in top level
+then use relative path with dot notation
+signals that a package exists...
+
+
+the "f" string is better compression than .format() or oldschool if you are >3.6
+
+
+imports set "__name__" to file name (no .py extension)
+good practive to "main check" for stand-alone and packaged 
+
+    if __name__ == '__main__' :
+        # do something
+__name__ == __main__ tells python to execute, not imports
+
+
+witout ".py" extension, file will probably be a module (good for functions and classes)
+from <mod_name> import <class/fun_name> <> <> ...
+
+
+
+
+
+
+
+cool shit:
+    repr()    return canonical string representation of an object

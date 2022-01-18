@@ -1,0 +1,129 @@
+$date
+	Sun Sep 12 18:47:30 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 8 ! outZ [7:0] $end
+$var wire 8 " outYbar [7:0] $end
+$var wire 8 # outY [7:0] $end
+$var reg 8 $ inA [7:0] $end
+$var reg 8 % inB [7:0] $end
+$var reg 1 & sel $end
+$var reg 3 ' sell [2:0] $end
+$var integer 32 ( idx [31:0] $end
+$var integer 32 ) r_gen [31:0] $end
+$scope module DUT1 $end
+$var wire 8 * in_a [7:0] $end
+$var wire 8 + in_b [7:0] $end
+$var wire 1 & select $end
+$var wire 8 , out_y_bar [7:0] $end
+$var wire 8 - out_y [7:0] $end
+$upscope $end
+$scope module DUT2 $end
+$var wire 8 . in_y [7:0] $end
+$var wire 3 / select [2:0] $end
+$var reg 8 0 out_z [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 0
+b0 /
+b11111111 .
+b11111111 -
+b0 ,
+b100100 +
+b11111111 *
+b100100 )
+b0 (
+b0 '
+0&
+b100100 %
+b11111111 $
+b11111111 #
+b0 "
+b1 !
+$end
+#10
+b1 (
+#20
+b10 (
+#30
+b10 !
+b10 0
+b1 '
+b1 /
+b0 (
+#40
+b1 (
+#50
+b10 (
+#60
+b100 !
+b100 0
+b10 '
+b10 /
+b0 (
+#70
+b1 (
+#80
+b10 (
+#90
+b1000 !
+b1000 0
+b11 '
+b11 /
+b0 (
+#100
+b1 (
+#110
+b10 (
+#120
+b10000 !
+b10000 0
+b100 '
+b100 /
+b0 (
+#130
+b1 (
+#140
+b10 (
+#150
+b100000 !
+b100000 0
+b101 '
+b101 /
+b0 (
+#160
+b1 (
+#170
+b10 (
+#180
+b1000000 !
+b1000000 0
+b110 '
+b110 /
+b0 (
+#190
+b1 (
+#200
+b10 (
+#210
+b10000000 !
+b10000000 0
+b111 '
+b111 /
+b0 (
+#220
+b1 (
+#230
+b10 (
+#240
+b11 (
+#250

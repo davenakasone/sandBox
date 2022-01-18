@@ -1,0 +1,20 @@
+module alu (out,a,b,sel);
+    input [3:0] a,b;  // operands 
+    input [2:0] sel; 
+    output [3:0] out;
+    reg [3:0] out;
+
+    always @ (*) 
+    begin 
+        case(sel)   // 3 control signals for one of 8 operations to select
+            3'b000: out=a;                  
+            3'b001: out=a & b;                  
+            3'b010: out=a|b;                  
+            3'b011: out=!a;                  
+            3'b100: out=a+b;                  
+            3'b101: out=a-b;     
+            3'b110: out=a+1;                 
+            3'b111: out=a-1;                  
+        endcase
+    end
+endmodule

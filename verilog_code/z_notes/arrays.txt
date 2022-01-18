@@ -1,0 +1,11 @@
+
+reg, wire, integer, real are all valid
+
+reg x [11:0];  // 1x12
+wire [0:7] y [3:0];  // 8x4
+reg [7:0] z [0:1][0:3];  // 2x4 where each element is 8-bit
+
+[ <start-bit> : <width> ]
+
+
+////////~~~~~~~~END>  arrays.txt

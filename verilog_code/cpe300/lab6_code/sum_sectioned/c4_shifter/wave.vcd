@@ -1,0 +1,56 @@
+$date
+	Wed Oct  6 09:53:21 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 8 ! from_shifter [7:0] $end
+$var reg 2 " SH [1:0] $end
+$var reg 8 # from_alu [7:0] $end
+$var reg 8 $ temp [7:0] $end
+$var integer 32 % idx [31:0] $end
+$var integer 32 & seed [31:0] $end
+$scope module DUT $end
+$var wire 2 ' SH [1:0] $end
+$var wire 8 ( from_alu [7:0] $end
+$var reg 8 ) from_shifter [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10100000 )
+b10100000 (
+b0 '
+b111010110000100110010100011111 &
+b0 %
+b10100000 $
+b10100000 #
+b0 "
+b10100000 !
+$end
+#5
+b1000000 !
+b1000000 )
+b1 "
+b1 '
+b1 %
+#10
+b1010000 !
+b1010000 )
+b10 "
+b10 '
+b10 %
+#15
+b1000001 !
+b1000001 )
+b11 "
+b11 '
+b11 %
+#20
+b100 %
+#25

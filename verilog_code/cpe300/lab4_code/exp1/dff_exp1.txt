@@ -1,0 +1,28 @@
+module dFF_struct(
+                    output wire outQ,
+                    output wire outQn,
+                    input wire inD,
+                    input wire clearN,
+                    input wire clock
+                );
+    wire w_not;
+    wire w_and1;
+    wire w_and2;
+    wire w_nor1;
+    wire w_nor2;
+
+    not(w_not, inD);
+    and(w_and1, w_not, clock);
+    and(w_and2, inD, clock);
+    nor(w_nor1, w_and1, w_nor2);
+    nor(w_nor2, w_and2, w_nor1);
+    
+    assign outQ = w_nor1 & clearN;
+    assign outQn = ~outQ;
+    //nor(outQ, w_and1, outQn, ~clearN);
+    //nor(outQn, w_and2, outQ);
+    
+endmodule
+
+
+////////~~~~~~~~END>  d_ff_struct.v

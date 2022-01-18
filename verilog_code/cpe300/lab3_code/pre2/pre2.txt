@@ -1,0 +1,12 @@
+module comp11 (
+                input wire in_a,
+                input wire in_b,
+                output reg [0:2] out_y
+              );
+    always @ (*) begin
+        out_y = 3'b000;
+        if (in_a < in_b)  out_y[0] = 1'b1;
+        if (in_a == in_b) out_y[1] = 1'b1;
+        if (in_a > in_b)  out_y[2] = 1'b1;
+    end
+endmodule

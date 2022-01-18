@@ -1,0 +1,31 @@
+memory is one of the most important things to manage  (especially main memory)
+memory is divided into bytes (smallest addressable units)
+addresses are linear...have one value and follow in sequence every byte has own address
+
+now days RAM is huge, but program will divide into managable pieces called segments   about 64kb   
+CPU is on RAM,   main memory takes  heap, stack, and code section   3 sections
+
+program brought into code section of main memory
+primitive data types depend on compiler    check documentation
+if static var, it gets allocated in the stack of function  (activation record of function)   all sit in stack section
+at compile time, this static memory size is known,    size is static and it was decided at compile time
+
+sequence of functions calls still allocate on the stack section
+starts main() static vars get allocated on stack, main() -> fun1() gets control and declares its variables -> fun2()
+top most activation record belongs to currently executing   ... a call stack   top, top, top, pop, pop, pop...
+only 1 runs at a time, but memory gets allocated
+control always goes back to last calling function
+how much memory required by function decided by a compiler...don't have to allocate or deallocate, it will be handled for you
+
+Heap just means piling up or a random pile
+if the things are organized or unorgainzed ...you can still same heap
+we are talking about heap memory (unorgainzed)  ...stack memory is organized
+treat heap memory like a resource  you should request, take, then give back   leaks are bad
+program can't directly access heap memory    but it can indirectly with pointer
+pointer usually takes size taken by integer
+the memory for a pointer is allocated inside stack    but it holds a value that references an address in the heap
+in c++ 'new' means heap   or malloc() means heap in str8 C
+WHEN YOU DON"T NEED MEMORY    DEALLOCATE
+then put on null                              explicit creation, explicit destruction
+memory leak mean no free space to make heap memory
+all happends during execution

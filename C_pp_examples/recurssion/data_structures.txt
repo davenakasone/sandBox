@@ -1,0 +1,19 @@
+1) physical data structures         array, linked list    or any combonation       defines memory allocation
+2) logical data structures           ADT
+
+array is collection of contigious memory locations
+the size is fixed  and can't be increased or decreased once created      can make in stack or heap
+if you are sure of max elements, it is not bad
+
+linked list is connection of nodes, each node has data...lives on heap
+
+data type is representation of data (how it is stored)  and operations allowed   ie int is 2 bytes, + - / * % ++ --  ...
+
+ADT means hiding internal details internal details hidden, but you only care about using
+classes are basically ADTs...help OOP make those classes you have know idea how they work, but still can use them
+
+list can be linked/array, you want to append(elm), remove(elem), search(elem),    with representation and operations you have DT
+append, set, get, insert, remove, search, contains, freq, sort, reverse, merge, spit        so many
+don't worry about how internals work as long as it works
+all classes are technically ADTs
+

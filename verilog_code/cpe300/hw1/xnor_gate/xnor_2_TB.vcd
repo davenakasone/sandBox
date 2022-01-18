@@ -1,0 +1,36 @@
+$date
+	Wed Sep  1 14:58:34 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module xnor_2_TB $end
+$var wire 1 ! OUTP $end
+$var reg 1 " INP_A $end
+$var reg 1 # INP_B $end
+$scope module DUT $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0#
+0"
+1!
+$end
+#5
+0!
+1#
+#10
+0#
+1"
+#15
+1!
+1#
+#20

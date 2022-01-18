@@ -1,0 +1,15 @@
+David, 
+Problem 1: you didn't make it better than the one we discussed.  
+In your algorithm, there are 7 states versus 5 states of a minimum design. 
+Also the check for N[0 ]=1 is a wire. 
+The only condition logic is NOR gate for checking N=0. 
+You have additional logic for masking.
+
+Problem 2:  C13 is to be written w.r.t. to C12
+As to the top level, I forgot to drag C0 to the upper box, but  it is implied. 
+I wish you told me that it is missing. 
+Also, I noticed that you tried to group by 2 terms. 
+This is true only for groups of 2. 
+When you decide to design for groups of 4, 
+you assume and allow up to 4 terms  of 4 inputs per gate.  
+Just to clarify

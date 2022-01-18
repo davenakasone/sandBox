@@ -1,0 +1,30 @@
+There are [ 1024 ] elements in the list, max = [ 9999999 ] , min = [ 1000000 ]
+
+BUBLE SORT: 2.31764e+07 ns   with [ 523776 ] comparisons and [ 260969 ] moves
+there should always be: 523776 comparisons
+0 moves if sorted, 1571328 worst case, 261888 on avergage
+
+SELECTION SORT: 1.81291e+06 ns   with [ 523776 ] comparisons and [ 3069 ] moves
+there should always be: 523776 comparisons
+moves should always be: 3069
+
+INSERTION SORT: 1.86134e+06 ns   with [ 271644 ] comparisons and [ 270631 ] moves
+min comps: 1023 , avg comps: 263168 , max comps: 523776
+avg moves: , 263168
+
+QUICK SORT: 426572 ns, [ 11572 ] comparisons, [ 18669 ] moves
+avg comps: 15257.6
+max comps: 523776
+avg moves: 8089.6
+max moves: 525822
+
+MERGE SORT: 254213 ns, [ 10995 ] comparisons, [ 20480 ] moves
+avg and max comps: 10240
+avg and max moves: 10240
+
+
+MERGE SORT      :  254213.0  ns
+QUICK SORT      :  426572.0  ns
+SELECTION SORT  :  1812908.0  ns
+INSERTION SORT  :  1861335.0  ns
+BUBLE SORT      :  23176373.0  ns

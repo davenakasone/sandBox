@@ -1,0 +1,225 @@
+$date
+	Sun Sep 19 21:11:36 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 7 ! seg2 [6:0] $end
+$var wire 7 " seg1 [6:0] $end
+$var reg 4 # inA [3:0] $end
+$var reg 4 $ inB [3:0] $end
+$var reg 1 % inC $end
+$scope module DUT $end
+$var wire 1 % Cin $end
+$var wire 4 & inpA [3:0] $end
+$var wire 4 ' inpB [3:0] $end
+$var wire 4 ( tenz [3:0] $end
+$var wire 5 ) temp [4:0] $end
+$var wire 4 * onez [3:0] $end
+$var wire 7 + disp2 [6:0] $end
+$var wire 7 , disp1 [6:0] $end
+$scope module adder $end
+$var wire 4 - in_a [3:0] $end
+$var wire 4 . in_b [3:0] $end
+$var wire 1 % in_c $end
+$var wire 4 / out_y [3:0] $end
+$var wire 1 0 out_c $end
+$var wire 1 1 co_2 $end
+$var wire 1 2 co_1 $end
+$var wire 1 3 co_0 $end
+$scope module fa_0 $end
+$var wire 1 4 in_a $end
+$var wire 1 5 in_b $end
+$var wire 1 % in_c $end
+$var wire 1 3 out_c $end
+$var wire 1 6 out_y $end
+$upscope $end
+$scope module fa_1 $end
+$var wire 1 7 in_a $end
+$var wire 1 8 in_b $end
+$var wire 1 3 in_c $end
+$var wire 1 2 out_c $end
+$var wire 1 9 out_y $end
+$upscope $end
+$scope module fa_2 $end
+$var wire 1 : in_a $end
+$var wire 1 ; in_b $end
+$var wire 1 2 in_c $end
+$var wire 1 1 out_c $end
+$var wire 1 < out_y $end
+$upscope $end
+$scope module fa_3 $end
+$var wire 1 = in_a $end
+$var wire 1 > in_b $end
+$var wire 1 1 in_c $end
+$var wire 1 0 out_c $end
+$var wire 1 ? out_y $end
+$upscope $end
+$upscope $end
+$scope module dig1 $end
+$var wire 4 @ cntl_4bit [3:0] $end
+$var reg 7 A disp_4bit [6:0] $end
+$upscope $end
+$scope module dig2 $end
+$var wire 4 B cntl_4bit [3:0] $end
+$var reg 7 C disp_4bit [6:0] $end
+$upscope $end
+$scope module getDigs $end
+$var wire 5 D bin_in [4:0] $end
+$var reg 4 E ones [3:0] $end
+$var reg 4 F tens [3:0] $end
+$var integer 32 G idx [31:0] $end
+$upscope $end
+$upscope $end
+$scope task disp $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11111111111111111111111111111111 G
+b0 F
+b1000 E
+b1000 D
+b1000000 C
+b0 B
+b0 A
+b1000 @
+1?
+0>
+0=
+0<
+1;
+0:
+09
+08
+17
+06
+15
+14
+13
+12
+11
+00
+b1000 /
+b101 .
+b11 -
+b0 ,
+b1000000 +
+b1000 *
+b1000 )
+b0 (
+b101 '
+b11 &
+0%
+b101 $
+b11 #
+b0 "
+b1000000 !
+$end
+#10
+01
+1<
+02
+19
+b1111001 !
+b1111001 +
+b1111001 C
+b10010 "
+b10010 ,
+b10010 A
+03
+b1 (
+b1 B
+b1 F
+b11111111111111111111111111111111 G
+b101 *
+b101 @
+b101 E
+00
+16
+b1111 )
+b1111 D
+b1111 /
+1?
+18
+04
+07
+1=
+b111 $
+b111 '
+b111 .
+b1000 #
+b1000 &
+b1000 -
+#20
+10
+0?
+11
+0<
+12
+b10 "
+b10 ,
+b10 A
+b1111001 !
+b1111001 +
+b1111001 C
+09
+b11111111111111111111111111111111 G
+b110 *
+b110 @
+b110 E
+b1 (
+b1 B
+b1 F
+13
+b10000 )
+b10000 D
+b0 /
+06
+08
+0;
+14
+17
+1:
+b1 $
+b1 '
+b1 .
+b1111 #
+b1111 &
+b1111 -
+#30
+b100100 "
+b100100 ,
+b100100 A
+b100100 !
+b100100 +
+b100100 C
+b11111111111111111111111111111111 G
+b10 *
+b10 @
+b10 E
+b10 (
+b10 B
+b10 F
+01
+19
+0?
+b10110 )
+b10110 D
+b110 /
+1<
+18
+1>
+0:
+b1011 $
+b1011 '
+b1011 .
+b1011 #
+b1011 &
+b1011 -
+#50

@@ -1,0 +1,68 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7fefc5c072d0 .scope module, "tb" "tb" 2 12;
+ .timescale -12 -12;
+v0x7fefc5c1c2b0_0 .var "en", 0 0;
+v0x7fefc5c1c350_0 .var "inp", 0 0;
+v0x7fefc5c1c400_0 .net "outp", 0 0, L_0x7fefc5c1c620;  1 drivers
+S_0x7fefc5c07440 .scope module, "DUT" "tri_buff" 2 17, 2 54 0, S_0x7fefc5c072d0;
+ .timescale -12 -12;
+    .port_info 0 /OUTPUT 1 "sig_out";
+    .port_info 1 /INPUT 1 "enable";
+    .port_info 2 /INPUT 1 "sig_in";
+L_0x103507008 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0x7fefc5c1c4f0 .functor XNOR 1, v0x7fefc5c1c2b0_0, L_0x103507008, C4<0>, C4<0>;
+v0x7fefc5c096e0_0 .net/2u *"_ivl_0", 0 0, L_0x103507008;  1 drivers
+v0x7fefc5c1bf00_0 .net *"_ivl_2", 0 0, L_0x7fefc5c1c4f0;  1 drivers
+o0x1034d6068 .functor BUFZ 1, C4<z>; HiZ drive
+; Elide local net with no drivers, v0x7fefc5c1bfa0_0 name=_ivl_4
+v0x7fefc5c1c060_0 .net "enable", 0 0, v0x7fefc5c1c2b0_0;  1 drivers
+v0x7fefc5c1c100_0 .net "sig_in", 0 0, v0x7fefc5c1c350_0;  1 drivers
+v0x7fefc5c1c1e0_0 .net "sig_out", 0 0, L_0x7fefc5c1c620;  alias, 1 drivers
+L_0x7fefc5c1c620 .functor MUXZ 1, o0x1034d6068, v0x7fefc5c1c350_0, L_0x7fefc5c1c4f0, C4<>;
+    .scope S_0x7fefc5c072d0;
+T_0 ;
+    %vpi_call 2 24 "$write", "\012 test tri-state buffer...\012\012" {0 0 0};
+    %vpi_call 2 25 "$write", " en  inp  |  outp\012" {0 0 0};
+    %vpi_call 2 26 "$write", " ------------------\012" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fefc5c1c2b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fefc5c1c350_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 30 "$write", "  %1b    %1b  |    %1b\012", v0x7fefc5c1c2b0_0, v0x7fefc5c1c350_0, v0x7fefc5c1c400_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fefc5c1c2b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fefc5c1c350_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 34 "$write", "  %1b    %1b  |    %1b\012", v0x7fefc5c1c2b0_0, v0x7fefc5c1c350_0, v0x7fefc5c1c400_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fefc5c1c2b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fefc5c1c350_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 38 "$write", "  %1b    %1b  |    %1b\012", v0x7fefc5c1c2b0_0, v0x7fefc5c1c350_0, v0x7fefc5c1c400_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fefc5c1c2b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fefc5c1c350_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 42 "$write", "  %1b    %1b  |    %1b\012", v0x7fefc5c1c2b0_0, v0x7fefc5c1c350_0, v0x7fefc5c1c400_0 {0 0 0};
+    %delay 10, 0;
+    %vpi_call 2 45 "$write", "\012\012\011\011 ~ ~ ~ TEST COMPLETE ~ ~ ~\012\012" {0 0 0};
+    %vpi_call 2 46 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "tri_buff.v";

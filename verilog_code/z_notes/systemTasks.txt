@@ -1,0 +1,60 @@
+
+many compilers will ignore $...  but check
+
+system tasks that extract data, like $monitor, need to be in initial or always block
+
+$display, $strobe, $monitor
+    similar syntax, only $monitor outputs every time, others are once
+    $strobe outputs at end of time unit
+    %b, %c, %d, %h, %s are all good to know
+
+$time: returns simulation time as a 64-bit integer {good for verilog}
+$stime:                             32-bit integer {sv only???}
+$realtime:                          real number {float}
+
+$reset: put simulation time back to 0
+$stop: halt simulation, applies interactive mode, commands can be entered
+$finish: exit simulation to OS
+
+$deposit: set a net a value of interest 
+
+$scope: sets scope to hierachrical
+$showscopes: lists all modules, tasks, and block names    n=1, current scope
+$list: line-numbered names of current scope
+
+$random: makes a random integer everytime called, derived from computer clock
+            give it a seed on first invokation to make same sequence 
+            var = $random(integer_seed);
+
+$dumpfile: dumps variable changes   $dumpfile(wave.vcd)
+$dumpvar(0, top) : dumps all vars in top and ALL levels below
+$dumpvar(1, top) : dumps all vars in top and below, but not modules instantiated in top
+$dumpvar(2, top) : dump all vars in top and 1 level below
+$dumpvar(n, top) : dumps all vars in top module and n-1 levels below
+$dumpon : initiate the dump 
+$dumpoff : stop dumping
+$dumpall
+
+$shm_probe, $shm_open   for Cadence
+
+$fopen, $fdisplay, $fstrobe, $fmonitor, $fwrite, ...
+
+$ferror ?
+$fgetc('h8000_000)   to get a char ?
+$fgets(string, n, file) ?   ->   fgets(string, 'h80000_0000)
+$feof
+$unget
+$fputc
+does $scanf work ?
+
+verilog does not allow assigment in conditional...don't use as loop control or to check
+make the assigment before entry
+
+0 = error
+1 = no error
+
+
+
+
+
+////////~~~~~~~~END>  systemTasks.txt

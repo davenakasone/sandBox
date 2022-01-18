@@ -1,0 +1,18 @@
+module reg4d_behave (
+                        output reg [3:0] q_bus,
+                        input wire [3:0] d_bus,
+                        input wire clrN,
+                        input wire clk
+                    );
+    always @ (posedge clk or negedge clrN) begin
+        if (clrN == 1'b0) begin
+            q_bus <= 4'b0000;
+        end
+        else begin
+            q_bus = d_bus;
+        end
+    end
+endmodule
+
+
+////////~~~~~~~~END>  reg4d_behave.v

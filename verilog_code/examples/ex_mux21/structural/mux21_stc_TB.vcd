@@ -1,0 +1,108 @@
+$date
+	Mon Aug 30 00:11:30 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module mux21_stc_TB $end
+$var wire 1 ! OUTP $end
+$var reg 1 " D0 $end
+$var reg 1 # D1 $end
+$var reg 1 $ SEL $end
+$scope module DUT $end
+$var wire 1 " inp0 $end
+$var wire 1 # inp1 $end
+$var wire 1 $ sel $end
+$var wire 1 % w3 $end
+$var wire 1 & w2 $end
+$var wire 1 ' w1 $end
+$var wire 1 ! outp $end
+$scope module u1 $end
+$var wire 1 # and_in0 $end
+$var wire 1 $ and_in1 $end
+$var wire 1 ' and_out $end
+$upscope $end
+$scope module u2 $end
+$var wire 1 $ not_in $end
+$var wire 1 & not_out $end
+$upscope $end
+$scope module u3 $end
+$var wire 1 " and_in0 $end
+$var wire 1 & and_in1 $end
+$var wire 1 % and_out $end
+$upscope $end
+$scope module u4 $end
+$var wire 1 ' or_in0 $end
+$var wire 1 % or_in1 $end
+$var wire 1 ! or_out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0'
+1&
+0%
+0$
+0#
+0"
+0!
+$end
+#10
+0&
+1$
+#20
+1&
+0$
+#21
+1#
+#30
+1!
+1'
+0&
+1$
+#39
+1"
+#40
+1%
+0'
+1&
+0$
+#42
+0#
+#50
+0!
+0%
+0&
+1$
+#60
+1!
+1%
+1&
+0$
+#63
+1#
+#70
+0%
+1'
+0&
+1$
+#78
+0"
+#80
+0!
+0'
+1&
+0$
+#84
+0#
+#90
+0&
+1$
+#100
+1&
+0$

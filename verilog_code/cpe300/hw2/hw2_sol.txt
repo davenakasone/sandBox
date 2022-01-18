@@ -1,0 +1,79 @@
+ module alu_m (a, b, s, out, uo, so);
+input [3:0] a, b;
+input [2:0] s;
+output [3:0] out;
+output uo, so;	// unsigned overflow, signed overflow
+reg [3:0] out;
+reg uo, so;
+always @(a or b or s)
+begin
+	case (s)
+		3'b001:	begin		// and
+				uo = 1'b0;
+				so = 1'b0;
+				out = a & b;
+			end
+		3'b010:	begin		// or
+				uo = 1'b0;
+				so = 1'b0;
+				out = a | b;
+			end
+		3'b011:	begin		// not
+				uo = 1'b0;
+				so = 1'b0;
+				out = ~a;
+			end
+		3'b100:	begin		// add
+				out = a + b;
+				uo = (a[3]&b[3]) | (a[3]&~out[3]) | (b[3]&~out[3]);
+				so = ~a[3]&~b[3]&out[3] | a[3]&b[3]&~out[3];
+			end
+		3'b101:	begin		// subtract
+				out = a - b;
+				uo = (~a[3]&b[3]) | (~a[3]&out[3]) | (a[3]&b[3]&out[3]);
+				so = (~a[3]&b[3]&out[3]) | (a[3]&~b[3]&~out[3]);
+			end
+		3'b110:	begin		// increment a by 1
+				out = a + 4'd1;
+				if (a == 4'h7)
+				begin
+					uo = 1'b0;
+					so = 1'b1;
+				end
+				else if (a == 4'hf)
+				begin
+					uo = 1'b1;
+					so = 1'b0;
+				end
+				else
+				begin 
+					uo = 1'b0;
+					so = 1'b0;
+				end
+			end
+		3'b111:	begin		// decrement a by 1
+				out = a - 4'd1;
+				if (a == 4'h0) 
+				begin
+					uo = 1'b1;
+					so = 1'b0;
+				end
+				else if (a == 4'h8)
+				begin
+					uo = 1'b0;
+					so = 1'b1;
+				end
+				else
+				begin
+					uo = 1'b0;
+					so = 1'b0;
+				end
+			end
+		default: begin 	// pass through on s = 3'b0000
+				out = a;
+				uo = 1'b0;
+				so = 1'b0;
+			end
+	endcase
+end
+endmodule

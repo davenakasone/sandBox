@@ -1,0 +1,73 @@
+$date
+	Wed Sep  8 10:40:40 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 1 ! outY $end
+$var reg 1 " inA $end
+$var reg 1 # inB $end
+$var reg 1 $ sel $end
+$var reg 3 % trans [2:0] $end
+$var integer 32 & idx [31:0] $end
+$scope module DUT $end
+$var wire 1 " in_a $end
+$var wire 1 # in_b $end
+$var wire 1 $ select $end
+$var wire 1 ! out_y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 &
+b0 %
+0$
+0#
+0"
+0!
+$end
+#10
+1#
+b1 %
+b1 &
+#20
+0#
+1!
+1"
+b10 %
+b10 &
+#30
+1#
+b11 %
+b11 &
+#40
+0#
+0"
+0!
+1$
+b100 %
+b100 &
+#50
+1!
+1#
+b101 %
+b101 &
+#60
+0!
+0#
+1"
+b110 %
+b110 &
+#70
+1!
+1#
+b111 %
+b111 &
+#80
+b1000 &
+#90

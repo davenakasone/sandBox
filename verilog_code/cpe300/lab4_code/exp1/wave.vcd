@@ -1,0 +1,136 @@
+$date
+	Mon Sep 27 10:02:09 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 1 ! Qn $end
+$var wire 1 " Q $end
+$var reg 1 # D $end
+$var reg 1 $ clk $end
+$var reg 1 % clrN $end
+$var integer 32 & idx [31:0] $end
+$var integer 32 ' seed [31:0] $end
+$scope module DUT $end
+$var wire 1 % clearN $end
+$var wire 1 $ clock $end
+$var wire 1 # inD $end
+$var wire 1 " outQ $end
+$var wire 1 ! outQn $end
+$var wire 1 ( w_and1 $end
+$var wire 1 ) w_and2 $end
+$var wire 1 * w_nor1 $end
+$var wire 1 + w_nor2 $end
+$var wire 1 , w_not $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0,
+x+
+x*
+0)
+0(
+b11101001111101111100011001 '
+b0 &
+1%
+0$
+1#
+x"
+x!
+$end
+#5
+0!
+1"
+1*
+0+
+1)
+1$
+#10
+0)
+b1010010110110101110110000000110 '
+b1 &
+0$
+#15
+1)
+1$
+#20
+1,
+0)
+0#
+b1100011010100010100111011001111 '
+b10 &
+0$
+#25
+1!
+1+
+0"
+0*
+1(
+1$
+#30
+0,
+0(
+1#
+b11110111111010111001111011000100 '
+b11 &
+0$
+#35
+0!
+1"
+1*
+0+
+1)
+1$
+#40
+1!
+0"
+0)
+b11101100000100001011011110101 '
+0%
+b0 &
+0$
+#45
+1)
+1$
+#50
+1,
+0)
+0#
+b1010011010010111101001100110010 '
+b1 &
+0$
+#55
+1+
+0*
+1(
+1$
+#60
+0,
+0(
+1#
+b1100000101000111010100100001011 '
+b10 &
+0$
+#65
+1*
+0+
+1)
+1$
+#70
+0)
+b1011011101011101110110011010000 '
+b11 &
+0$
+#75
+1)
+1$
+#80
+0)
+b100 &
+0$

@@ -1,0 +1,52 @@
+documenting is important
+be sure to do it, so other people + future self can understand
+make videos and other tools as needed, 
+    may even need more than 1 documentation file
+    and manufacture's notes
+    always check with your cyber security department BEFORE
+
+best practice:
+
+    /code
+        /bare    # ready to go, tests are good
+            /yourProgram  # proper macros and features activated
+        /linux   # build and test as you make program
+            /yourProgram
+                /functions    
+                /structures          # can include methods
+                /resources           # keep constants, macros, and variables here
+                /main.c
+                /Makefile            # at least have a "make raw" ...others for later
+                /documentation.txt   # or "readMe.txt" let people know about design
+
+    /documentation
+        /manufacturer   # take everything manufacturer gives away for free
+        /notes          # detailed descriptions
+        /other          # project dependent...github, previous implementations, ect
+    
+    .git    # for version control, back-up, ect
+
+***********************************************************************************
+
+each file's purpose should be identified in a comment block at top of .c or .h
+/*
+    this file does...
+*/
+
+... body
+
+////////~~~~~~~~END>  fileName.x
+...new line @ EOF for C99
+
+***********************************************************************************
+
+this template is designed to be driven from the main() function
+- everything is intended to be modular (minimize global variables, sound practices...)
+- made to develop on OS and provide easy transition to embedded
+- test driven concept, but entire "testing" directory should be deleted 
+    for relese, and have no effect on primary program
+
+try to give each module its own .c and .h until you know how you want to combine them
+<stdint.h> is very useful for embedded  ...convert as needed
+
+#include <xxx> // what was used

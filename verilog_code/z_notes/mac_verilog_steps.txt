@@ -1,0 +1,26 @@
+// 28, 
+
+make your "modules"
+
+make a test bench (pay attention to the house-keeping procedures)
+    note that modelsim, icarus, and others may be different
+
+when all the code is good, "compile" the TB
+    be in the same directory as the files
+
+        $ iverilog -Wall -o <your_TB>.vvp <your_TB>.v
+
+if there are no errors, run the object file:
+
+        $ vvp <your_TB>.vvp
+
+double click the *.vcd file to view the wave
+
+makes sure the TB has:
+
+    $dumpvars(0, <tb_name>);
+    $dumpfile("wave.vcd");
+    ...
+    $finish;
+
+////////~~~~~~~~END>  mac_verilog_steps.txt

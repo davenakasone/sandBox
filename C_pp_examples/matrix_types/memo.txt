@@ -1,0 +1,20 @@
+lots of important types, these are just a few:
+
+Diagonal
+lower-triangular
+upper-triangular
+symmetric
+tridiagonal
+band
+toeplit
+sparse
+
+n x n is sqaure, and useful
+if there are a lot of null cells, you can store them efficiently
+
+square band matrix is like tri-diagonal....you have a lot of empty,
+still take advantage of diagonals...just a different calculation
+
+recursion is an option if it won't exceed your call stack ( < 10k in most cases)
+just make your tree and adjust to accomplish the task
+or just use std::stack to help iterate what you want to do recursivley

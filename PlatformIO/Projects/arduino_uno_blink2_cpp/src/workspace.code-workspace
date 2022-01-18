@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../Desktop/platform_io/arduino_uno_blink_c"
+		},
+		{
+			"name": "arduino_uno_blinlp_cpp",
+			"path": ".."
+		},
+		{
+			"name": "arduino_uno_blink_cpp",
+			"path": "../../../../../Desktop/platform_io/arduino_uno_blink_cpp"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,73 @@
+$date
+	Wed Oct  6 10:33:37 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 8 ! from_mux [7:0] $end
+$var reg 1 " IE $end
+$var reg 8 # feedback [7:0] $end
+$var reg 8 $ new_data [7:0] $end
+$var integer 32 % ii [31:0] $end
+$var integer 32 & jj [31:0] $end
+$var integer 32 ' seed [31:0] $end
+$scope module DUT $end
+$var wire 1 " IE $end
+$var wire 8 ( feedback [7:0] $end
+$var wire 8 ) new_data [7:0] $end
+$var reg 8 * from_mux [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b101100 *
+b10011000 )
+b101100 (
+b11100010100101100000100110101100 '
+b1000 &
+b0 %
+b10011000 $
+b101100 #
+0"
+b101100 !
+$end
+#5
+b1000011 !
+b1000011 *
+b11001010 $
+b11001010 )
+b1000011 #
+b1000011 (
+b1000 &
+b10110110111011101000100110101101 '
+b1 %
+#10
+b11110100 !
+b11110100 *
+b11110100 $
+b11110100 )
+b10110000 #
+b10110000 (
+b1000 &
+1"
+b11110100001101011101010111010 '
+b10 %
+#15
+b1100001 !
+b1100001 *
+b10101000 $
+b10101000 )
+b1100001 #
+b1100001 (
+b1000 &
+0"
+b1111100000011010101100011 '
+b11 %
+#20
+b100 %
+#25

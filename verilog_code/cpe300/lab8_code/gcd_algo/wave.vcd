@@ -1,0 +1,358 @@
+$date
+	Tue Oct 19 20:35:50 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 8 ! result [7:0] $end
+$var wire 1 " done $end
+$var reg 8 # A_input [7:0] $end
+$var reg 8 $ B_input [7:0] $end
+$var reg 1 % clock $end
+$var reg 1 & reset $end
+$var reg 1 ' start $end
+$var integer 32 ( idx [31:0] $end
+$var integer 32 ) seed [31:0] $end
+$scope module GDP $end
+$var wire 8 * A_input [7:0] $end
+$var wire 8 + B_input [7:0] $end
+$var wire 1 % clock $end
+$var wire 1 " done $end
+$var wire 1 & reset $end
+$var wire 1 ' start $end
+$var wire 8 , result [7:0] $end
+$var wire 1 - n_is_0 $end
+$var wire 8 . n_input [7:0] $end
+$var wire 1 / WE $end
+$var wire 2 0 WA [1:0] $end
+$var wire 2 1 SH [1:0] $end
+$var wire 1 2 RBE $end
+$var wire 2 3 RBA [1:0] $end
+$var wire 1 4 RAE $end
+$var wire 2 5 RAA [1:0] $end
+$var wire 1 6 OE $end
+$var wire 1 7 IE $end
+$var wire 1 8 A_gt_B $end
+$var wire 3 9 ALU [2:0] $end
+$scope module CU $end
+$var wire 8 : A_input [7:0] $end
+$var wire 8 ; B_input [7:0] $end
+$var wire 1 7 IE $end
+$var wire 1 4 RAE $end
+$var wire 1 2 RBE $end
+$var wire 1 / WE $end
+$var wire 1 % clock $end
+$var wire 1 & reset $end
+$var wire 1 ' start $end
+$var wire 1 - n_is_0 $end
+$var wire 2 < WA [1:0] $end
+$var wire 2 = SH [1:0] $end
+$var wire 2 > RBA [1:0] $end
+$var wire 2 ? RAA [1:0] $end
+$var wire 1 6 OE $end
+$var wire 1 8 A_gt_B $end
+$var wire 3 @ ALU [2:0] $end
+$var reg 8 A n_input [7:0] $end
+$var reg 3 B n_state [2:0] $end
+$var reg 3 C state [2:0] $end
+$upscope $end
+$scope module DP $end
+$var wire 3 D ALU [2:0] $end
+$var wire 1 8 A_gt_B $end
+$var wire 1 7 IE $end
+$var wire 1 6 OE $end
+$var wire 2 E RAA [1:0] $end
+$var wire 1 4 RAE $end
+$var wire 2 F RBA [1:0] $end
+$var wire 1 2 RBE $end
+$var wire 2 G SH [1:0] $end
+$var wire 2 H WA [1:0] $end
+$var wire 1 / WE $end
+$var wire 1 % clock $end
+$var wire 8 I n_input [7:0] $end
+$var wire 8 J rf_port_B [7:0] $end
+$var wire 8 K rf_port_A [7:0] $end
+$var wire 8 L result [7:0] $end
+$var wire 1 - n_is_0 $end
+$var wire 8 M from_shifter [7:0] $end
+$var wire 8 N from_mux [7:0] $end
+$var wire 8 O from_alu [7:0] $end
+$var reg 8 P to_register_file [7:0] $end
+$scope module comp1 $end
+$var wire 1 7 IE $end
+$var wire 8 Q new_data [7:0] $end
+$var wire 8 R feedback [7:0] $end
+$var reg 8 S from_mux [7:0] $end
+$upscope $end
+$scope module comp2 $end
+$var wire 2 T RAA [1:0] $end
+$var wire 1 4 RAE $end
+$var wire 2 U RBA [1:0] $end
+$var wire 1 2 RBE $end
+$var wire 2 V WA [1:0] $end
+$var wire 1 / WE $end
+$var wire 1 % clock $end
+$var wire 8 W from_mux [7:0] $end
+$var wire 8 X port_B [7:0] $end
+$var wire 8 Y port_A [7:0] $end
+$upscope $end
+$scope module comp3 $end
+$var wire 3 Z ALU [2:0] $end
+$var wire 8 [ A_bus [7:0] $end
+$var wire 8 \ B_bus [7:0] $end
+$var reg 8 ] from_alu [7:0] $end
+$upscope $end
+$scope module comp4 $end
+$var wire 2 ^ SH [1:0] $end
+$var wire 8 _ from_alu [7:0] $end
+$var reg 8 ` from_shifter [7:0] $end
+$upscope $end
+$scope module comp5 $end
+$var wire 1 6 OE $end
+$var wire 8 a from_shifter [7:0] $end
+$var reg 8 b result [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope task getGCD $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bz b
+bx a
+bx `
+bx _
+b0 ^
+bx ]
+bx \
+bx [
+b101 Z
+bx Y
+bx X
+b0 W
+b0 V
+b0 U
+b0 T
+bx S
+bx R
+bx Q
+b0 P
+bx O
+bx N
+bx M
+bz L
+bx K
+bx J
+bx I
+b0 H
+b0 G
+b0 F
+b0 E
+b101 D
+b0 C
+b1 B
+bx A
+b101 @
+b0 ?
+b0 >
+b0 =
+b0 <
+b1001 ;
+b1001 :
+b101 9
+x8
+07
+06
+b0 5
+14
+b0 3
+12
+b0 1
+b0 0
+1/
+bx .
+x-
+bz ,
+b1001 +
+b1001 *
+b110111100 )
+b0 (
+1'
+0&
+0%
+b11 $
+b1001 #
+0"
+bz !
+$end
+#5
+08
+04
+b1001 P
+b1001 W
+02
+b0 9
+b0 @
+b0 D
+b0 Z
+b0 M
+b0 R
+b0 `
+b0 a
+0-
+b1001 N
+b1001 S
+b0 O
+b0 ]
+b0 _
+b10 B
+b1001 .
+b1001 A
+b1001 I
+b1001 Q
+17
+b0 K
+b0 Y
+b0 [
+b0 J
+b0 X
+b0 \
+b1 C
+1%
+#10
+0%
+#15
+b11 B
+b1 0
+b1 <
+b1 H
+b1 V
+b10 C
+1%
+#20
+0%
+#25
+08
+b0 M
+b0 R
+b0 `
+b0 a
+b1001 K
+b1001 Y
+b1001 [
+b0 O
+b0 ]
+b0 _
+b1001 J
+b1001 X
+b1001 \
+14
+b0 P
+b0 W
+0/
+12
+b101 9
+b101 @
+b101 D
+b101 Z
+1-
+b0 N
+b0 S
+b110 B
+07
+b0 0
+b0 <
+b0 H
+b0 V
+b1 3
+b1 >
+b1 F
+b1 U
+b11 C
+1%
+#30
+0%
+#35
+b1001 P
+b1001 W
+18
+0-
+b1001 N
+b1001 S
+b0 J
+b0 X
+b0 \
+b1001 M
+b1001 R
+b1001 `
+b1001 a
+b1001 O
+b1001 ]
+b1001 _
+02
+b0 9
+b0 @
+b0 D
+b0 Z
+b0 3
+b0 >
+b0 F
+b0 U
+b1001 !
+b1001 ,
+b1001 L
+b1001 b
+1"
+16
+b110 C
+1%
+#40
+b0 B
+0%
+1&
+#45
+08
+b0 P
+b0 W
+1-
+b0 N
+b0 S
+b1001 J
+b1001 X
+b1001 \
+b0 M
+b0 R
+b0 `
+b0 a
+1/
+b0 O
+b0 ]
+b0 _
+b1001 K
+b1001 Y
+b1001 [
+12
+b101 9
+b101 @
+b101 D
+b101 Z
+b1 B
+14
+bz !
+bz ,
+bz L
+bz b
+0"
+06
+b0 C
+1%
+#50
+0%
+b1 (
+#53

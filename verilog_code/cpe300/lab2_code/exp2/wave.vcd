@@ -1,0 +1,65 @@
+$date
+	Wed Sep  8 10:05:03 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 1 ! outY $end
+$var reg 1 " inA $end
+$var reg 1 # inB $end
+$var reg 2 $ trans [1:0] $end
+$var integer 32 % idx [31:0] $end
+$scope module DUT $end
+$var wire 1 " in_a $end
+$var wire 1 # in_b $end
+$var wire 1 ! out_y $end
+$var wire 1 & t_1 $end
+$var wire 1 ' t_2 $end
+$var wire 1 ( w_1 $end
+$var wire 1 ) w_2 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1)
+1(
+0'
+0&
+b0 %
+b0 $
+0#
+0"
+0!
+$end
+#10
+1!
+0(
+1'
+1#
+b1 $
+b1 %
+#20
+1&
+1!
+1(
+0'
+0)
+0#
+1"
+b10 $
+b10 %
+#30
+0!
+0&
+0(
+1#
+b11 $
+b11 %
+#40
+b100 %
+#50

@@ -1,0 +1,97 @@
+$date
+	Wed Oct 20 01:04:36 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 16 ! bus [15:0] $end
+$var reg 1 " WE $end
+$var reg 4 # address [3:0] $end
+$var reg 1 $ clock $end
+$var integer 32 % idx [31:0] $end
+$scope module DUT $end
+$var wire 1 " WE $end
+$var wire 4 & address [3:0] $end
+$var wire 1 $ clock $end
+$var wire 16 ' bus [15:0] $end
+$var reg 16 ( data_out [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx (
+bx '
+b0 &
+b0 %
+x$
+b0 #
+0"
+bx !
+$end
+#10
+b1 #
+b1 &
+b1 %
+#20
+b10 #
+b10 &
+b10 %
+#30
+b11 #
+b11 &
+b11 %
+#40
+b100 #
+b100 &
+b100 %
+#50
+b101 #
+b101 &
+b101 %
+#60
+b110 #
+b110 &
+b110 %
+#70
+b111 #
+b111 &
+b111 %
+#80
+b1000 #
+b1000 &
+b1000 %
+#90
+b1001 #
+b1001 &
+b1001 %
+#100
+b1010 #
+b1010 &
+b1010 %
+#110
+b1011 #
+b1011 &
+b1011 %
+#120
+b1100 #
+b1100 &
+b1100 %
+#130
+b1101 #
+b1101 &
+b1101 %
+#140
+b1110 #
+b1110 &
+b1110 %
+#150
+b1111 #
+b1111 &
+b1111 %
+#160
+b10000 %

@@ -1,0 +1,464 @@
+$date
+	Fri Nov 12 05:01:05 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 1 ! sig_data_write_enable $end
+$var wire 4 " pc_executing [3:0] $end
+$var wire 8 # pass_back_AC [7:0] $end
+$var wire 8 $ instruction_fetched [7:0] $end
+$var wire 8 % data_to_write [7:0] $end
+$var reg 1 & clock $end
+$var reg 1 ' reset $end
+$scope module DUT $end
+$var wire 1 & clock $end
+$var wire 1 ' reset $end
+$var wire 1 ! sig_data_write_enable $end
+$var wire 4 ( pc_executing [3:0] $end
+$var wire 8 ) pass_back_AC [7:0] $end
+$var wire 8 * instruction_fetched [7:0] $end
+$var wire 8 + data_to_write [7:0] $end
+$var wire 8 , data_fetched [7:0] $end
+$scope module DMEM $end
+$var wire 1 & clock $end
+$var wire 4 - data_address [3:0] $end
+$var wire 8 . data_fetched [7:0] $end
+$var wire 1 ' reset $end
+$var wire 1 ! sig_data_write_enable $end
+$var wire 8 / data_to_write [7:0] $end
+$var integer 32 0 idx [31:0] $end
+$upscope $end
+$scope module IMEM $end
+$var wire 8 1 instruction_fetched [7:0] $end
+$var wire 4 2 pc_executing [3:0] $end
+$var integer 32 3 idx [31:0] $end
+$upscope $end
+$scope module processor $end
+$var wire 1 & clock $end
+$var wire 8 4 data_fetched [7:0] $end
+$var wire 8 5 instruction_fetched [7:0] $end
+$var wire 1 ' reset $end
+$var wire 1 6 sig_rf_write_enable $end
+$var wire 1 7 sig_rf_write_address $end
+$var wire 1 8 sig_rf_port_B_address $end
+$var wire 1 9 sig_rf_port_A_address $end
+$var wire 1 ! sig_data_write_enable $end
+$var wire 1 : sig_data_to_rf $end
+$var wire 3 ; sig_alu_op [2:0] $end
+$var wire 4 < pc_executing [3:0] $end
+$var wire 8 = pass_back_AC [7:0] $end
+$var wire 1 > flag_zero $end
+$var wire 8 ? data_to_write [7:0] $end
+$var wire 1 @ condition_branch_jump $end
+$scope module CU $end
+$var wire 1 @ condition_branch_jump $end
+$var wire 4 A op_code [3:0] $end
+$var wire 1 6 sig_rf_write_enable $end
+$var wire 1 7 sig_rf_write_address $end
+$var wire 1 8 sig_rf_port_B_address $end
+$var wire 1 9 sig_rf_port_A_address $end
+$var wire 1 B sig_jump $end
+$var wire 1 ! sig_data_write_enable $end
+$var wire 1 : sig_data_to_rf $end
+$var wire 1 C sig_branch $end
+$var wire 3 D sig_alu_op [2:0] $end
+$var wire 1 > flag_zero $end
+$var reg 11 E control_signals [10:0] $end
+$upscope $end
+$scope module DP $end
+$var wire 1 & clock $end
+$var wire 1 @ condition_branch_jump $end
+$var wire 8 F data_fetched [7:0] $end
+$var wire 8 G data_to_write [7:0] $end
+$var wire 8 H instruction_fetched [7:0] $end
+$var wire 1 ' reset $end
+$var wire 3 I sig_alu_op [2:0] $end
+$var wire 1 : sig_data_to_rf $end
+$var wire 1 9 sig_rf_port_A_address $end
+$var wire 1 8 sig_rf_port_B_address $end
+$var wire 1 7 sig_rf_write_address $end
+$var wire 1 6 sig_rf_write_enable $end
+$var wire 8 J rf_write_value [7:0] $end
+$var wire 8 K rf_port_B [7:0] $end
+$var wire 8 L rf_port_A [7:0] $end
+$var wire 4 M pc_plus_1 [3:0] $end
+$var wire 4 N pc_next [3:0] $end
+$var wire 4 O pc_executing [3:0] $end
+$var wire 8 P pass_back_AC [7:0] $end
+$var wire 1 > flag_zero $end
+$var wire 8 Q alu_result [7:0] $end
+$scope module ALU $end
+$var wire 1 R alu_mode $end
+$var wire 3 S sig_alu_op [2:0] $end
+$var wire 8 T rf_port_B [7:0] $end
+$var wire 8 U rf_port_A [7:0] $end
+$var reg 8 V alu_result [7:0] $end
+$var reg 1 > flag_zero $end
+$upscope $end
+$scope module PC $end
+$var wire 1 & clock $end
+$var wire 1 ' reset $end
+$var wire 4 W pc_next [3:0] $end
+$var reg 4 X pc_executing [3:0] $end
+$upscope $end
+$scope module RF $end
+$var wire 1 & clock $end
+$var wire 8 Y pass_back_AC [7:0] $end
+$var wire 1 ' reset $end
+$var wire 8 Z rf_port_A [7:0] $end
+$var wire 8 [ rf_port_B [7:0] $end
+$var wire 1 9 sig_rf_port_A_address $end
+$var wire 1 8 sig_rf_port_B_address $end
+$var wire 1 7 sig_rf_write_address $end
+$var wire 1 6 sig_rf_write_enable $end
+$var wire 8 \ rf_write_value [7:0] $end
+$upscope $end
+$scope module add1 $end
+$var wire 4 ] pc_executing [3:0] $end
+$var wire 4 ^ pc_plus_1 [3:0] $end
+$upscope $end
+$scope module mux_branching_jumping $end
+$var wire 4 _ select_0 [3:0] $end
+$var wire 4 ` select_1 [3:0] $end
+$var wire 1 @ selector $end
+$var wire 4 a mux_out [3:0] $end
+$upscope $end
+$scope module mux_data $end
+$var wire 8 b select_0 [7:0] $end
+$var wire 8 c select_1 [7:0] $end
+$var wire 1 : selector $end
+$var wire 8 d mux_out [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 d
+b0 c
+b0 b
+b1 a
+b0 `
+b1 _
+b1 ^
+b0 ]
+b0 \
+b0 [
+b0 Z
+b0 Y
+b0 X
+b1 W
+b0 V
+b0 U
+b0 T
+b11 S
+1R
+b0 Q
+b0 P
+b0 O
+b1 N
+b1 M
+b0 L
+b0 K
+b0 J
+b11 I
+b10110000 H
+b0 G
+b0 F
+b1010110000 E
+b11 D
+0C
+0B
+b1011 A
+0@
+b0 ?
+1>
+b0 =
+b0 <
+b11 ;
+0:
+09
+18
+07
+16
+b10110000 5
+b0 4
+b10000 3
+b0 2
+b10110000 1
+b10000 0
+b0 /
+b0 .
+b0 -
+b0 ,
+b0 +
+b10110000 *
+b0 )
+b0 (
+0'
+0&
+b0 %
+b10110000 $
+b0 #
+b0 "
+0!
+$end
+#100
+b1 J
+b1 \
+b1 d
+0>
+b1 Q
+b1 V
+b1 b
+b10 ;
+b10 D
+b10 I
+b10 S
+b1010100000 E
+b10 N
+b10 W
+b10 a
+b1010 A
+b10 M
+b10 ^
+b10 _
+b10100000 $
+b10100000 *
+b10100000 1
+b10100000 5
+b10100000 H
+b1 "
+b1 (
+b1 2
+b1 <
+b1 O
+b1 X
+b1 ]
+1&
+#200
+0&
+#300
+b1 %
+b1 +
+b1 /
+b1 ?
+b1 G
+b1 K
+b1 T
+b1 [
+08
+17
+b0 ;
+b0 D
+b0 I
+b0 S
+b110000000 E
+b11 N
+b11 W
+b11 a
+b11 A
+0R
+b11 M
+b11 ^
+b11 _
+b110000 $
+b110000 *
+b110000 1
+b110000 5
+b110000 H
+b10 "
+b10 (
+b10 2
+b10 <
+b10 O
+b10 X
+b10 ]
+b1 J
+b1 \
+b1 d
+b1 Q
+b1 V
+b1 b
+b1 L
+b1 U
+b1 Z
+b1 #
+b1 )
+b1 =
+b1 P
+b1 Y
+1&
+#400
+0&
+#500
+18
+07
+b111 ;
+b111 D
+b111 I
+b111 S
+b11111110 J
+b11111110 \
+b11111110 d
+b1011110000 E
+b11111110 Q
+b11111110 V
+b11111110 b
+b100 N
+b100 W
+b100 a
+b1111 A
+1R
+b100 M
+b100 ^
+b100 _
+b11110000 $
+b11110000 *
+b11110000 1
+b11110000 5
+b11110000 H
+b11 "
+b11 (
+b11 2
+b11 <
+b11 O
+b11 X
+b11 ]
+1&
+#600
+0&
+#700
+b110 ;
+b110 D
+b110 I
+b110 S
+b1011100000 E
+b101 N
+b101 W
+b101 a
+b1110 A
+b101 M
+b101 ^
+b101 _
+b11100000 $
+b11100000 *
+b11100000 1
+b11100000 5
+b11100000 H
+b100 "
+b100 (
+b100 2
+b100 <
+b100 O
+b100 X
+b100 ]
+b11111111 J
+b11111111 \
+b11111111 d
+b11111111 Q
+b11111111 V
+b11111111 b
+b11111110 L
+b11111110 U
+b11111110 Z
+b11111110 #
+b11111110 )
+b11111110 =
+b11111110 P
+b11111110 Y
+1&
+#800
+0&
+#900
+b11111111 %
+b11111111 +
+b11111111 /
+b11111111 ?
+b11111111 G
+b11111111 K
+b11111111 T
+b11111111 [
+08
+06
+b0 ;
+b0 D
+b0 I
+b0 S
+1C
+b10 E
+b110 N
+b110 W
+b110 a
+b110 A
+b1010 `
+0R
+b1010 -
+b110 M
+b110 ^
+b110 _
+b1101010 $
+b1101010 *
+b1101010 1
+b1101010 5
+b1101010 H
+b101 "
+b101 (
+b101 2
+b101 <
+b101 O
+b101 X
+b101 ]
+b11111111 J
+b11111111 \
+b11111111 d
+b11111111 Q
+b11111111 V
+b11111111 b
+b11111111 L
+b11111111 U
+b11111111 Z
+b11111111 #
+b11111111 )
+b11111111 =
+b11111111 P
+b11111111 Y
+1&
+#1000
+0&
+#1100
+1!
+0C
+b1000 E
+b111 N
+b111 W
+b111 a
+b10 A
+b100 `
+b100 -
+b111 M
+b111 ^
+b111 _
+b100100 $
+b100100 *
+b100100 1
+b100100 5
+b100100 H
+b110 "
+b110 (
+b110 2
+b110 <
+b110 O
+b110 X
+b110 ]
+1&
+#1200
+0&
+#1201

@@ -1,0 +1,17 @@
+	.ORG 2000H;
+START: MVI A,00C0H
+	SIM
+	CALL DELAY
+	MVI A,40H
+	SIM 
+	CALL DELAY
+	JMP START
+
+	.ORG 2020H;
+DELAY:   LXI H,0FFFH
+DELAY1:  DCX H
+         MOV A,L
+         ORA H
+         JNZ DELAY1
+         RET
+	.END

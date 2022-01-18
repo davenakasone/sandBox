@@ -1,0 +1,40 @@
+
+functions in Verilog are similar to C {that is what Verilog is based on}
+    functions are intended to have a single output
+    return value var is implicitly created inside scope of function with same name
+    "automatic" if you need it reentrant
+
+    can't have time controlled statements
+    can call other functions, but not task
+    must have at least 1 input
+    can't have non-blocking statements, assign-deassign, force-release, ect
+    can't have triggers, output, or inout
+    only return 1 value
+
+    good for reading and maintainng, behavioral only
+    local to a module...must be in
+    call from "initial", "always" , or another function
+    can invoke other functions, but not a task
+        no output or inout arguments
+
+    "automatic" makes function reentrant
+    resources declared in the funciton get allocated every call, instead of
+    being shared between calls
+    in C, all variables are automatic by default
+    the program can dynamically allocate as many copies as needed to complete the recursion
+    ...may want to make functions automatic by default
+
+    function <auto, anyon, ect> [return type, range] {fun_name}
+        input <declare>
+        other declerations
+        begin
+            statements...
+        end
+    endfunction
+
+    local reg declared in function are STATIC {retain values}
+    function can only talk by taking input and writting it to output
+    
+
+
+////////~~~~~~~~END>  functions.txt

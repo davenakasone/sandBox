@@ -1,0 +1,45 @@
+
+be aware of what synthesizes and what does not for each platform
+there are many software dependancies 
+
+in the test bench, "initial block"
+    $dumpfile("tb_name.vcd");  // make sure it is .vcd or you will overwrite
+    $dumpvars(0, <tb_mod_name>);
+    ...
+    $finish; // good habit
+
+
+
+it is a "description" language, not a "programming" language
+the TB can only stimulate....first step to verify
+need a synthesis tool and something to prove the design on
+there will probably be errors not found during simulation
+if you fuck up the design, you don't know what netlist will come out (if any)
+the synthesis tool makes hardware config based on target library...could be all NAND gates
+SYNETHIZABLE VERILOG {sub-set}
+- only the simulation tool (iverilog) and wave viewer (GTKwave) for simulation
+- synthesis tool won't accept
+- use the reccomened styles  (design only...fuck up the TB all you want)
+
+Combinational Logic: output only depends on current input
+    no notion of clock or other synch
+    implement the fuctionality, don't try to time it (#)
+    no feedback
+        the circuit may turn into a sequential if you violate these
+        never stablizes, lots of oscillation
+    if...else, case, "selection control" must have all cases specified
+        you will make a latch
+    built in primitives are good (AND, OR, NAND...but harware may not have, check)
+    UDP by truth table (synthesis tools might not take UDPs, check)
+    continous assigment is good
+    functions are good
+    behavior statements are good (always block)
+    tasks are good (no delays)
+    netlist of modules (all the instances and interconnections you want)
+    only use target technology library of synthesis tool 
+    use behavior ^ | &   if your library is limited
+    "always" is ok if it is not driven by clock...include ALL inputs to module
+        if you don't include ALL inputs, a latch is infered
+    
+
+////////~~~~~~~~END>  synthesizing.txt

@@ -1,0 +1,18 @@
+module pre1c (
+                input wire [0:2] abc,
+                output reg [3:0] y1234
+            );
+    always @ (*) begin
+        y1234 = 4'b0000;
+        case (abc)
+            3'b000 : y1234[0] = 1'b1; 
+            3'b011 : y1234[1] = 1'b1;
+            3'b101 : y1234[2] = 1'b1;
+            3'b111 : begin
+                        y1234[0] = 1'b1;
+                        y1234[1] = 1'b1;
+                    end
+            //default : y1234 = 4'b0000;
+        endcase
+    end
+endmodule

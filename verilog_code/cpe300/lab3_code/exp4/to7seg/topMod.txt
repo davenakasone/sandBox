@@ -1,0 +1,200 @@
+
+module topMod (
+                    output wire [6:0] dispSign,
+                    output wire [6:0] disp2,
+                    output wire [6:0] disp1,
+                    input wire [2:0] operate,
+                    input wire [3:0] inpA,
+                    input wire [3:0] inpB,
+                    input wire Cin
+            );
+    wire [4:0] temp;
+    wire [3:0] onez;
+    wire [3:0] tenz;
+
+    myALU alu (
+                .out_y(temp),
+                .d_sin(dispSign),
+                .selector(operate),
+                .in_a(inpA),
+                .in_b(inpB),
+                .in_c(Cin)
+            );
+
+    my_bcd getDigs (
+                        .tens(tenz),
+                        .ones(onez),
+                        .bin_in(temp)
+                );
+    
+    seg7_dig dig2 (
+                    .cntl_4bit(tenz),
+                    .disp_4bit(disp2)
+                );
+    
+    seg7_dig dig1 (
+                    .cntl_4bit(onez),
+                    .disp_4bit(disp1)
+                );
+endmodule
+
+
+////~~~~
+
+
+module myALU (
+                output reg [4:0] out_y,
+                output reg [6:0] d_sin,
+                input wire [2:0] selector,
+                input wire [3:0] in_a,
+                input wire [3:0] in_b,
+                input wire in_c
+            );
+
+    reg [4:0] catch;
+
+    always @ (*) begin
+        d_sin = 7'b1111_111;
+        case (selector)
+            3'b000 : 
+                begin    // increment
+                    out_y = in_a + 1'b1;
+                    if (out_y[4] == 1'b1) begin
+                        d_sin = 7'b1111_110;  // overflow
+                    end
+                end
+            3'b001 : 
+                begin    // decrement
+                    
+                    if (in_a == 4'b0000) begin
+                        d_sin = 7'b0111_111; // negative
+                        out_y = 5'b0000_1;
+                    end
+                    else begin
+                        out_y = in_a - 1'b1;
+                    end
+                end
+            3'b010 :  
+                begin    // rotate right
+                    out_y = {in_a[2:0], in_a[3]};
+                end
+            3'b011 :
+                begin    // shift right
+                    out_y = in_a >> 1;
+                end
+            3'b100 : 
+                begin    // AND
+                    out_y = in_a & in_b;
+                end
+            3'b101 :
+                begin    // OR
+                    out_y = in_a | in_b;
+                end
+            3'b110 :
+                begin    // Add
+                    out_y  = in_a + in_b + in_c;
+                    if (out_y[4] == 1'b1) begin
+                        d_sin = 7'b1111_110;  // overflow
+                    end
+                end
+            3'b111 :
+                begin
+                    catch = in_a - in_b - in_c;
+                    if (catch[4] == 1'b1 ) begin
+                        catch = catch - 1'b1;
+                        catch = ~ catch;
+                        out_y = catch;
+                        d_sin = 7'b0111_111; // negative
+                    end
+                    else begin
+                        out_y = catch[3:0];
+                    end
+                end
+        endcase
+
+    end
+endmodule
+
+
+////~~~~
+
+
+module seg7_dig(
+                input wire [3:0] cntl_4bit,
+                output reg [6:0] disp_4bit
+            );
+
+    parameter ON = 1'b0;
+    parameter OFF = 1'b1;
+
+    always @ (*) begin
+        disp_4bit = {7{OFF}};
+        case (cntl_4bit)
+            4'b0000 : disp_4bit[5:0] = {6{ON}};
+            4'b0001 : disp_4bit[2:1] = {2{ON}};
+            4'b0010 :
+                begin
+                    disp_4bit[1:0] = {2{ON}};
+                    disp_4bit[6] = ON;
+                    disp_4bit[4:3] = {2{ON}};
+                end
+            4'b0011 :
+                begin
+                    disp_4bit[3:0] = {4{ON}};
+                    disp_4bit[6] = ON;
+                end
+            4'b0100 :
+                begin
+                    disp_4bit[2:1] = {2{ON}};
+                    disp_4bit[6:5] = {2{ON}};
+                end 
+            4'b0101 :
+                begin
+                    disp_4bit[0] = ON;
+                    disp_4bit[3:2] = {2{ON}};
+                    disp_4bit[6:5] = {2{ON}};
+                end
+            4'b0110 :
+                begin
+                    disp_4bit[0] = ON;
+                    disp_4bit[6:2] = {5{ON}};
+                end
+            4'b0111 : disp_4bit[2:0] = {3{ON}};
+            4'b1000 : disp_4bit[6:0] = {7{ON}};
+            4'b1001 :
+                begin
+                    disp_4bit[6:0] = {7{ON}};
+                    disp_4bit[4:3] = {2{OFF}};
+                end
+        endcase
+    end
+endmodule
+
+
+////~~~~ get the 2 decimal digits of 5-bit binary
+
+
+module my_bcd ( 
+                    output reg [3:0] tens,
+                    output reg [3:0] ones,
+                    input wire [4:0] bin_in
+            );
+
+    integer idx;
+
+    always @ (bin_in) begin
+        tens = 4'b0000;
+        ones = 4'b0000;
+        for (idx = 4; idx >= 0; idx = idx - 1) begin
+            if (tens >= 3'b101) tens = tens + 2'b11;
+            if (ones >= 3'b101) ones = ones + 2'b11;
+            tens = tens << 1;
+            tens[0] = ones[3];
+            ones = ones << 1;
+            ones[0] = bin_in[idx];
+        end
+    end
+endmodule
+
+
+////////~~~~~~~~END>  alu7.v

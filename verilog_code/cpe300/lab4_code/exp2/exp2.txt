@@ -1,0 +1,64 @@
+module reg4d (
+                output wire [3:0] q_bus,
+                input wire [3:0] d_bus,
+                input wire clrN,
+                input wire clk
+        );
+    
+    dFF_struct dff_0 (
+                        .outQ(q_bus[0]),
+                        .inD(d_bus[0]),
+                        .clearN(clrN),
+                        .clock(clk)
+                );
+    
+    dFF_struct dff_1 (
+                        .outQ(q_bus[1]),
+                        .inD(d_bus[1]),
+                        .clearN(clrN),
+                        .clock(clk)
+                );
+    
+    dFF_struct dff_2 (
+                        .outQ(q_bus[2]),
+                        .inD(d_bus[2]),
+                        .clearN(clrN),
+                        .clock(clk)
+                );
+    
+    dFF_struct dff_3 (
+                        .outQ(q_bus[3]),
+                        .inD(d_bus[3]),
+                        .clearN(clrN),
+                        .clock(clk)
+                );
+    
+endmodule
+
+
+////~~~~
+
+
+module dFF_struct(
+                    output wire outQ,
+                    input wire inD,
+                    input wire clearN,
+                    input wire clock
+                );
+    wire w_not;
+    wire w_and1;
+    wire w_and2;
+    wire w_nor1;
+    wire w_nor2;
+
+    not(w_not, inD);
+    and(w_and1, w_not, clock);
+    and(w_and2, inD, clock);
+    nor(w_nor1, w_and1, w_nor2);
+    nor(w_nor2, w_and2, w_nor1);
+    
+    assign outQ = w_nor1 & clearN;
+endmodule
+
+
+////////~~~~~~~~END>  reg4d.v

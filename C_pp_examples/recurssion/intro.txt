@@ -1,0 +1,21 @@
+data is integral part of program
+program is instructions to perform operations on data
+without data...there isn't much
+
+1) Data structure    arrangement of data so it can be used efficiently (inside memory during operation of program)
+        how program is going to manage data so it can perform operations
+        CPU executes instructions, RAM is temporary/primary, HD is permenant storage
+        program file gets installed to storage    so does data     both also come into main memory when called
+        CPU starts to execute program file, if program needs data file, it must come into main memory
+        program can't directly process data if it stays on storage
+        every program needs to deal with data....how you organize data (structure it) inside main memory is very important
+        that is why data structures are formed in main memory, part of a running program ...make it efficient
+        you can get speed and save memory if you use the right data structure
+
+2) Data base    when data is larger in size, you can't keep it all in main memory
+        this relational data stays on a disc   maybe a database table   all have a relationship between them
+        again you need a data structure so it can be accessed by programs easily
+3) Data warehouse     old/legacy data not needed in daily function, but may be used to make decision... have to mine
+
+4) Big data     internet making fuck loads of data     a lot more complex to analyze, but all still use data structures
+            mostly only can live online

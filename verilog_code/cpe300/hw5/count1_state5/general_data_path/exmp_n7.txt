@@ -1,0 +1,708 @@
+example using  input n == 7 ....  111
+clock alternates every 5 ns
+
+ ************************************************
+ {data_path}                                  0 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  xxxx_xxxx
+         mux[1], n_in:  xxxx_xxxx
+         mux out, nnn:  xxxx_xxxx
+ ---------------------------------
+               rf_inp:  0000_0000
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  1  ,  RBA:  00
+ reg[00]:  xxxx_xxxx "count"
+ reg[01]:  xxxx_xxxx "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  xxxx_xxxx
+               port B:  xxxx_xxxx
+ --------------------------------------
+        alu operation:  101
+           alu output:  xxxx_xxxx
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  xxxx_xxxx
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1     1 ns
+-------------------------------------------------------------------------------------------------
+ 000  || 0  | 1  | 00 | 1   | 00  | 1   | 00  | 101 | 00 | 0  || 000  ||  0 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                  5 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  xxxx_xxxx
+         mux[1], n_in:  xxxx_xxxx
+         mux out, nnn:  xxxx_xxxx
+ ---------------------------------
+               rf_inp:  0000_0000
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  1  ,  RBA:  00
+ reg[00]:  xxxx_xxxx "count"
+ reg[01]:  xxxx_xxxx "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  xxxx_xxxx
+               port B:  xxxx_xxxx
+ --------------------------------------
+        alu operation:  101
+           alu output:  xxxx_xxxx
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  xxxx_xxxx
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1     6 ns
+-------------------------------------------------------------------------------------------------
+ 000  || 0  | 1  | 00 | 1   | 00  | 1   | 00  | 101 | 00 | 0  || 000  ||  0 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 10 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0000
+         mux[1], n_in:  xxxx_xxxx
+         mux out, nnn:  0000_0000
+ ---------------------------------
+               rf_inp:  0000_0000
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  1  ,  RBA:  00
+ reg[00]:  0000_0000 "count"
+ reg[01]:  xxxx_xxxx "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0000
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  101
+           alu output:  0000_0000
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0000
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    11 ns
+-------------------------------------------------------------------------------------------------
+ 000  || 0  | 1  | 00 | 1   | 00  | 1   | 00  | 101 | 00 | 0  || 001  ||  1 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 15 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0000
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0000
+ ---------------------------------
+               rf_inp:  0000_0000
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  1  ,  RBA:  00
+ reg[00]:  0000_0000 "count"
+ reg[01]:  xxxx_xxxx "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0000
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  101
+           alu output:  0000_0000
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0000
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    16 ns
+-------------------------------------------------------------------------------------------------
+ 001  || 1  | 1  | 01 | 0   | 00  | 0   | 00  | 000 | 00 | 0  || 010  ||  1 | 0   |  0      1
+
+
+ ************************************************
+ {data_path}                                 20 ns
+               n==0    :  0
+               n[0]==1 :  1
+ -------------------------
+     input_enable_mux:  1
+  mux[0], shifter_out:  0000_0000
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0111
+ ---------------------------------
+               rf_inp:  0000_0111
+      write enable WE:  1  ,   WA:  01
+    read A enable RAE:  0  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0000 "count"
+ reg[01]:  xxxx_xxxx "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0000
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0000
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0000
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    21 ns
+-------------------------------------------------------------------------------------------------
+ 001  || 1  | 1  | 01 | 0   | 00  | 0   | 00  | 000 | 00 | 0  || 010  ||  1 | 0   |  0      1
+
+
+ ************************************************
+ {data_path}                                 25 ns
+               n==0    :  0
+               n[0]==1 :  1
+ -------------------------
+     input_enable_mux:  1
+  mux[0], shifter_out:  0000_0000
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0111
+ ---------------------------------
+               rf_inp:  0000_0111
+      write enable WE:  1  ,   WA:  01
+    read A enable RAE:  0  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0000 "count"
+ reg[01]:  xxxx_xxxx "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0000
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0000
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0000
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    26 ns
+-------------------------------------------------------------------------------------------------
+ 010  || 0  | 1  | 00 | 1   | 00  | 0   | 00  | 110 | 00 | 0  || 011  ||  1 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 30 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0001
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0001
+ ---------------------------------
+               rf_inp:  0000_0001
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0000 "count"
+ reg[01]:  0000_0111 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0000
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  110
+           alu output:  0000_0001
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0001
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    31 ns
+-------------------------------------------------------------------------------------------------
+ 010  || 0  | 1  | 00 | 1   | 00  | 0   | 00  | 110 | 00 | 0  || 011  ||  1 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 35 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0001
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0001
+ ---------------------------------
+               rf_inp:  0000_0001
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0000 "count"
+ reg[01]:  0000_0111 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0000
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  110
+           alu output:  0000_0001
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0001
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    36 ns
+-------------------------------------------------------------------------------------------------
+ 011  || 0  | 1  | 01 | 1   | 01  | 0   | 00  | 000 | 10 | 0  || 010  ||  1 | 0   |  0      1
+
+
+ ************************************************
+ {data_path}                                 40 ns
+               n==0    :  0
+               n[0]==1 :  1
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0011
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0011
+ ---------------------------------
+               rf_inp:  0000_0011
+      write enable WE:  1  ,   WA:  01
+    read A enable RAE:  1  ,  RAA:  01
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0001 "count"
+ reg[01]:  0000_0111 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0111
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0111
+ ---------------------------------
+    shifter operation:   10
+       shifter output:  0000_0011
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    41 ns
+-------------------------------------------------------------------------------------------------
+ 011  || 0  | 1  | 01 | 1   | 01  | 0   | 00  | 000 | 10 | 0  || 010  ||  1 | 0   |  0      1
+
+
+ ************************************************
+ {data_path}                                 45 ns
+               n==0    :  0
+               n[0]==1 :  1
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0011
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0011
+ ---------------------------------
+               rf_inp:  0000_0011
+      write enable WE:  1  ,   WA:  01
+    read A enable RAE:  1  ,  RAA:  01
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0001 "count"
+ reg[01]:  0000_0111 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0111
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0111
+ ---------------------------------
+    shifter operation:   10
+       shifter output:  0000_0011
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    46 ns
+-------------------------------------------------------------------------------------------------
+ 010  || 0  | 1  | 00 | 1   | 00  | 0   | 00  | 110 | 00 | 0  || 011  ||  1 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 50 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0010
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0010
+ ---------------------------------
+               rf_inp:  0000_0010
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0001 "count"
+ reg[01]:  0000_0011 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0001
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  110
+           alu output:  0000_0010
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0010
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    51 ns
+-------------------------------------------------------------------------------------------------
+ 010  || 0  | 1  | 00 | 1   | 00  | 0   | 00  | 110 | 00 | 0  || 011  ||  1 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 55 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0010
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0010
+ ---------------------------------
+               rf_inp:  0000_0010
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0001 "count"
+ reg[01]:  0000_0011 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0001
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  110
+           alu output:  0000_0010
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0010
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    56 ns
+-------------------------------------------------------------------------------------------------
+ 011  || 0  | 1  | 01 | 1   | 01  | 0   | 00  | 000 | 10 | 0  || 010  ||  1 | 0   |  0      1
+
+
+ ************************************************
+ {data_path}                                 60 ns
+               n==0    :  0
+               n[0]==1 :  1
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0001
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0001
+ ---------------------------------
+               rf_inp:  0000_0001
+      write enable WE:  1  ,   WA:  01
+    read A enable RAE:  1  ,  RAA:  01
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0010 "count"
+ reg[01]:  0000_0011 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0011
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0011
+ ---------------------------------
+    shifter operation:   10
+       shifter output:  0000_0001
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    61 ns
+-------------------------------------------------------------------------------------------------
+ 011  || 0  | 1  | 01 | 1   | 01  | 0   | 00  | 000 | 10 | 0  || 010  ||  1 | 0   |  0      1
+
+
+ ************************************************
+ {data_path}                                 65 ns
+               n==0    :  0
+               n[0]==1 :  1
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0001
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0001
+ ---------------------------------
+               rf_inp:  0000_0001
+      write enable WE:  1  ,   WA:  01
+    read A enable RAE:  1  ,  RAA:  01
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0010 "count"
+ reg[01]:  0000_0011 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0011
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0011
+ ---------------------------------
+    shifter operation:   10
+       shifter output:  0000_0001
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    66 ns
+-------------------------------------------------------------------------------------------------
+ 010  || 0  | 1  | 00 | 1   | 00  | 0   | 00  | 110 | 00 | 0  || 011  ||  1 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 70 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0011
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0011
+ ---------------------------------
+               rf_inp:  0000_0011
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0010 "count"
+ reg[01]:  0000_0001 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0010
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  110
+           alu output:  0000_0011
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0011
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    71 ns
+-------------------------------------------------------------------------------------------------
+ 010  || 0  | 1  | 00 | 1   | 00  | 0   | 00  | 110 | 00 | 0  || 011  ||  1 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 75 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0011
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0011
+ ---------------------------------
+               rf_inp:  0000_0011
+      write enable WE:  1  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0010 "count"
+ reg[01]:  0000_0001 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0010
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  110
+           alu output:  0000_0011
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0011
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    76 ns
+-------------------------------------------------------------------------------------------------
+ 011  || 0  | 1  | 01 | 1   | 01  | 0   | 00  | 000 | 10 | 0  || 100  ||  1 | 0   |  1      0
+
+
+ ************************************************
+ {data_path}                                 80 ns
+               n==0    :  1
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0000
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0000
+ ---------------------------------
+               rf_inp:  0000_0000
+      write enable WE:  1  ,   WA:  01
+    read A enable RAE:  1  ,  RAA:  01
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0011 "count"
+ reg[01]:  0000_0001 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0001
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0001
+ ---------------------------------
+    shifter operation:   10
+       shifter output:  0000_0000
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    81 ns
+-------------------------------------------------------------------------------------------------
+ 011  || 0  | 1  | 01 | 1   | 01  | 0   | 00  | 000 | 10 | 0  || 100  ||  1 | 0   |  1      0
+
+
+ ************************************************
+ {data_path}                                 85 ns
+               n==0    :  1
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0000
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0000
+ ---------------------------------
+               rf_inp:  0000_0000
+      write enable WE:  1  ,   WA:  01
+    read A enable RAE:  1  ,  RAA:  01
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0011 "count"
+ reg[01]:  0000_0001 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0001
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0001
+ ---------------------------------
+    shifter operation:   10
+       shifter output:  0000_0000
+ ---------------------------------
+  ouput buffer enable:  0
+          running sum:  zzzz_zzzz
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    86 ns
+-------------------------------------------------------------------------------------------------
+ 100  || 0  | 0  | 00 | 1   | 00  | 0   | 00  | 000 | 00 | 1  || 100  ||  1 | 0   |  0      0
+
+
+ ************************************************
+ {data_path}                                 90 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0011
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0011
+ ---------------------------------
+               rf_inp:  0000_0011
+      write enable WE:  0  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0011 "count"
+ reg[01]:  0000_0000 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0011
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0011
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0011
+ ---------------------------------
+  ouput buffer enable:  1
+          running sum:  0000_0011
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    91 ns
+-------------------------------------------------------------------------------------------------
+ 100  || 0  | 0  | 00 | 1   | 00  | 0   | 00  | 000 | 00 | 1  || 000  ||  0 | 1   |  0      0
+
+
+ ************************************************
+ {data_path}                                 95 ns
+               n==0    :  0
+               n[0]==1 :  0
+ -------------------------
+     input_enable_mux:  0
+  mux[0], shifter_out:  0000_0011
+         mux[1], n_in:  0000_0111
+         mux out, nnn:  0000_0011
+ ---------------------------------
+               rf_inp:  0000_0011
+      write enable WE:  0  ,   WA:  00
+    read A enable RAE:  1  ,  RAA:  00
+    read B enable RBE:  0  ,  RBA:  00
+ reg[00]:  0000_0011 "count"
+ reg[01]:  0000_0000 "n"
+ reg[10]:  xxxx_xxxx "not used"
+ reg[11]:  xxxx_xxxx "not used"
+               port A:  0000_0011
+               port B:  0000_0000
+ --------------------------------------
+        alu operation:  000
+           alu output:  0000_0011
+ ---------------------------------
+    shifter operation:   00
+       shifter output:  0000_0011
+ ---------------------------------
+  ouput buffer enable:  1
+          running sum:  0000_0011    
+ ************************************************ 
+state || IE | WE | WA | RAE | RAA | RBE | RBA | ALU | SH | OE || next || st | rst | n==0  n[0]==1    96 ns
+-------------------------------------------------------------------------------------------------
+ 000  || 0  | 1  | 00 | 1   | 00  | 1   | 00  | 101 | 00 | 0  || 000  ||  0 | 1   |  0      0
+
+    //  there are 3 1's in 7, this is correct
+
+		 ~ ~ ~ TEST COMPLETE ~ ~ ~
+
+
+         

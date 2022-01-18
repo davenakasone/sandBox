@@ -1,0 +1,50 @@
+module seg7(
+                input [3:0] cntl,
+                output reg [6:0] disp
+            );
+
+    parameter ON = 1'b1;
+    parameter OFF = 1'b0;
+
+    always @ (*) begin
+        disp = {7{OFF}};
+        case (cntl)
+            4'b0000 : disp[5:0] = {6{ON}};
+            4'b0001 : disp[2:1] = {2{ON}};
+            4'b0010 :
+                begin
+                    disp[1:0] = {2{ON}};
+                    disp[6] = ON;
+                    disp[4:3] = {2{ON}};
+                end
+            4'b0011 :
+                begin
+                    disp[3:0] = {4{ON}};
+                    disp[6] = ON;
+                end
+            4'b0100 :
+                begin
+                    disp[2:1] = {2{ON}};
+                    disp[6:5] = {2{ON}};
+                end 
+            4'b0101 :
+                begin
+                    disp[0] = ON;
+                    disp[3:2] = {2{ON}};
+                    disp[6:5] = {2{ON}};
+                end
+            4'b0110 :
+                begin
+                    disp[0] = ON;
+                    disp[6:2] = {5{ON}};
+                end
+            4'b0111 : disp[2:0] = {3{ON}};
+            4'b1000 : disp[6:0] = {7{ON}};
+            4'b1001 :
+                begin
+                    disp[6:0] = {7{ON}};
+                    disp[4:3] = {2{OFF}};
+                end
+        endcase
+    end
+endmodule

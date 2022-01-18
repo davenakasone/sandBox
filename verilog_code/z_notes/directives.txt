@@ -1,0 +1,23 @@
+
+they seem to use `  the "grave char"
+don't put ; at end
+every compiler uses these for control
+
+`include "path/file_name.v"
+    works like C for .h files   proceeds as if you included the source file to current
+
+`define
+    most macros
+
+`undef
+    remove a defined macro
+
+`ifdef `ifndef `else `elsif `endif
+
+`timescale
+
+(* preserve *)
+
+
+
+////////~~~~~~~~END>  directives.txt

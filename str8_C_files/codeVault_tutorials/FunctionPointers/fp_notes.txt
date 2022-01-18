@@ -1,0 +1,14 @@
+in C, function pointers point to code, not data
+... a variable that contains the address of a function
+        don't be trying pointer arithmetic on it
+
+usually, a function pointer will store start of an executable
+most of the time, you don't have to manage memory for function pointers
+
+fp1  : basic function pointer
+fp2  : array of function pointers
+fp3  : pass function pointer as argument and return function pointer from function
+fp4  : common application, qsort()     ...lots of good ones like this, bsearch, bubble, ect
+fp5  : custom seach        only good for complex tasks, know when to use
+fp6  : general function pointer use
+

@@ -1,0 +1,262 @@
+name: "Simulator"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        platform: [Win32, x64]
+        exclude:
+          - os: ubuntu-latest
+            platform: Win32
+          - os: macos-latest
+            platform: Win32
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+
+    - name: Install tools on MacOS
+      if: matrix.os == 'macos-latest'
+      run: brew install boost ninja
+    
+    - name: Install tools on Ubuntu
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get install ninja-build libboost-dev
+        echo "CC=gcc-10" >> $GITHUB_ENV
+        echo "CXX=g++-10" >> $GITHUB_ENV
+
+    - name: Install tools on Windows
+      if: matrix.os == 'windows-latest'
+      run: |
+        mkdir boost
+        curl --progress-bar --location --output boost\download.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.72.0/boost_1_72_0.tar.bz2/download
+        7z -oboost x boost\download.tar.bz2 -y -bd
+        7z -oboost x boost\download.tar -y -bd
+        cd boost
+        move boost_*\* .
+        del download.*
+
+    - name: Create CMake dir
+      run: mkdir build
+
+    - name: Build with Visual Studio
+      working-directory: build
+      if: matrix.os == 'windows-latest'
+      run: |
+        cmake ../simulator -DENABLE_IPO=1 -DBOOST_ROOT="${{github.workspace}}\boost" -DPYTHON3_COMMAND=python -A ${{ matrix.platform }}
+        cmake --build . --config Release --target mipt-mips cachesim unit-tests 
+        move Release\*.exe .
+
+    - name: Build on POSIX
+      if: matrix.os != 'windows-latest'
+      working-directory: build
+      run: |
+        cmake ../simulator -G Ninja -DENABLE_IPO=1
+        ninja mipt-mips mipt-v cachesim unit-tests        
+
+    - name: Unit tests
+      working-directory: build
+      run: ./unit-tests
+  
+    - name: Integration
+      working-directory: build
+      run: |
+        ./mipt-mips -b ../tests/mips/mips-fib.bin -n 5000000 --mars
+        ./cachesim  -t ../tests/mem_trace.json -s 32768 -w 32
+
+  profile:
+    name: Profile
+    runs-on: ubuntu-latest
+    needs: [test]
+    env:
+      CC: gcc-10
+      CXX: g++-10
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+
+    - name: Install Ninja and Boost
+      run: sudo apt-get install ninja-build libboost-dev
+
+    - name: Create CMake dir
+      run: mkdir build
+
+    - name: Build simulator
+      working-directory: build
+      run: |
+        cmake ../simulator -G Ninja -DCMAKE_BUILD_TYPE=Release -DENABLE_IPO=1 -DENABLE_PROFILE=1
+        ninja mipt-mips
+        
+    - name: Run
+      working-directory: build
+      run: ./mipt-mips -b ../tests/mips/mips-fib.bin -n 5000000 --mars
+
+    - name: Dump profile
+      working-directory: build
+      run: gprof ./mipt-mips gmon.out -p | head -
+        
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    needs: [test]
+    strategy:
+      matrix:
+        config:
+          - name: gcc
+            cc: gcc-10
+            cxx: g++-10
+            gcov: gcov-10
+          - name: llvm
+            cc: clang-12
+            cxx: clang++-12
+            gcov: "llvm-cov-12 gcov"
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: 'cpp'
+
+    - name: Install packages
+      run: sudo apt-get install ninja-build clang++-12 clang-tidy-12 llvm-12 libboost-dev
+
+    - name: Create CMake dir
+      run: mkdir build
+
+    - name: Build simulator
+      working-directory: build
+      env:
+        CC:  ${{ matrix.config.cc }}
+        CXX: ${{ matrix.config.cxx }}
+      run: |
+        cmake ../simulator -G Ninja -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=1 -DENABLE_ASAN=1 -DENABLE_UBSAN=1
+        ninja unit-tests
+
+    - name: Run
+      working-directory: build
+      run: ./unit-tests
+
+    - name: Codecov
+      run: bash <(curl -s https://codecov.io/bash) -x "${{ matrix.config.gcov }}" -X gcovout
+    
+    - name: Clang-Tidy
+      if: matrix.config.name == 'llvm'
+      working-directory: build
+      continue-on-error: true
+      run: run-clang-tidy-12.py -header-filter='.*' 2> /dev/null
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+
+  gdb:
+    name: GDB Integration
+    runs-on: ubuntu-latest
+    needs: [test]
+    env:
+      CC: gcc-10
+      CXX: g++-10
+      GDB_VER: gdb-10.2
+      GDB_DIR: ${{ github.workspace }}/$GDB_VER
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+
+    - name: Install packages
+      run: sudo apt-get install ninja-build libboost-dev
+
+    - name: Create CMake dir
+      run: mkdir build gdb_build
+
+    - name: Download GDB
+      run: |
+         wget http://ftp.gnu.org/gnu/gdb/$GDB_VER.tar.gz
+         tar -xzf $GDB_VER.tar.gz
+
+    - name: Prepare GDB
+      env:
+        GDB_BUILD: ${{ github.workspace }}/gdb_build
+      run: |
+          cd $GDB_BUILD && ${{ github.workspace }}/$GDB_VER/configure --target=mipsel-unknown-linux --with-system-zlib --with-python=no
+          cd $GDB_BUILD && make configure-gdb CFLAGS='-w -O0' CXXFLAGS='-w -O0' MAKEINFO=true > /dev/null
+          cd $GDB_BUILD && mkdir opcodes      && cd opcodes      && ${{ github.workspace }}/$GDB_VER/opcodes/configure --target=mipsel-unknown-linux && make libopcodes.a
+          cd $GDB_BUILD && mkdir libdecnumber && cd libdecnumber && ${{ github.workspace }}/$GDB_VER/libdecnumber/configure && make libdecnumber.a
+          cd $GDB_BUILD && mkdir readline     && cd readline     && ${{ github.workspace }}/$GDB_VER/readline/configure && cd readline && make libreadline.a
+          cd $GDB_BUILD && mkdir libctf       && cd libctf       && ${{ github.workspace }}/$GDB_VER/libctf/configure --with-system-zlib && make ctf-error.h && make libctf.la
+          #                                                                                             w/a for GDB 10.1, remove once updated ^~~~~~~~~~~~~~~^
+
+    - name: Build simulator
+      working-directory: build
+      run: |
+        cmake ../simulator -G Ninja -DGDB_SOURCE_PATH=../$GDB_VER -DGDB_BUILD_PATH=../gdb_build
+        ninja gdb-mips-sim
+
+    - name: Build GDB
+      working-directory: gdb_build/gdb
+      run: make gdb CFLAGS='-w -O0' CXXFLAGS='-w -O0' MAKEINFO=true > /dev/null
+        
+    - name: Run GDB
+      working-directory: gdb_build/gdb
+      run: ./gdb -x $GITHUB_WORKSPACE/tests/test.gdb --args $GITHUB_WORKSPACE/tests/mips/mips-tt.bin
+
+  cobertura:
+    name: CoberturaCoverage
+#    needs: [test]
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+
+    - name: Install tools
+      run: choco install opencppcoverage codecov
+
+    - name: Install tools on Windows
+      run: |
+        mkdir boost
+        curl --progress-bar --location --output boost\download.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.72.0/boost_1_72_0.tar.bz2/download
+        7z -oboost x boost\download.tar.bz2 -y -bd
+        7z -oboost x boost\download.tar -y -bd
+        cd boost
+        move boost_*\* .
+        del download.*
+
+    - name: Create CMake dir
+      run: mkdir build
+
+    - name: Build with Visual Studio
+      working-directory: build
+      run: |
+        cmake ../simulator -DENABLE_IPO=1 -DBOOST_ROOT="${{github.workspace}}\boost" -DPYTHON3_COMMAND=python
+        cmake --build . --config Debug --target unit-tests     
+
+    - name: Unit tests
+      shell: cmd
+      run: call "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --export_type cobertura:coverage.xml --modules "unit-tests.exe" --excluded_line_regex "\s*\}.*" --sources "simulator\*" -- .\build\Debug\unit-tests.exe
+
+    - name: Codecov
+      run: codecov -f coverage.xml --root .

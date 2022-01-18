@@ -1,0 +1,5 @@
+1100_1100   // address 8'h00
+1010_1010   // address 8'h01
+@55         // jump to 8'h55
+0101_1010   // address 8'h55
+0110_1001   // address 8'h56

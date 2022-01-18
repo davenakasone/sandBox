@@ -1,0 +1,122 @@
+/// Sample Solution
+/// @file extra01.cpp
+/// @brief This program uses command-line input to process two positive non-zero
+///        integers for multiplication.
+///        Two multiplication methods are used and then compared for efficiency
+///            a standard for loop
+///            the Russian multiplication method
+///        Error checking for the presence of non-zero positive integers is
+///        implemented.
+
+#include <iostream>
+
+using namespace std;
+
+/// -------------------------------------------------------------------------
+/// Function Prototypes
+/// -------------------------------------------------------------------------
+void printPgmDesc();
+void runLoopMethod(long& multiplicand, long& multiplier,
+                   long& iterationCount, long& answer);
+void runRussianMethod(long& multiplicand, long& multiplier,
+                      long& iterationCount, long& answer);
+void printResult(long& iterationCount, long& answer);
+
+/// -------------------------------------------------------------------------
+/// Main entry-point for this application
+///
+/// @returns Exit-code for the process - 0 for success, else an error code.
+/// -------------------------------------------------------------------------
+int main(int argc, const char* argv[]) {
+    
+    long multiplicand = 0;
+    long multiplier = 0;
+    long answer = 0;
+    long iterationCount = 0;
+    
+    if (argc < 2) {
+        cout << "Syntax error! Usage: extra01 int_1 int_2" << endl << endl;
+    } else {
+        multiplicand = atoi(argv[1]);
+        multiplier = atoi(argv[2]);
+        if ((multiplicand * multiplier) < 1 ) {
+            cout << "This program requires positive non-zero integers \n"
+            << "(floats will be truncated)" << endl << endl;
+        } else {
+            
+            printPgmDesc();
+            
+            // looping method
+            runLoopMethod(multiplicand, multiplier, iterationCount, answer);
+            cout << "For loop method..." << endl;
+            printResult(iterationCount, answer);
+            
+            // Russian method
+            runRussianMethod(multiplicand, multiplier, iterationCount, answer);
+            cout << "Russian Multiplication method..." << endl;
+            printResult(iterationCount, answer);
+        }
+    }
+
+    return 0;
+}
+
+/// -------------------------------------------------------------------------
+/// Function Implementations
+/// -------------------------------------------------------------------------
+
+/// This function output a program description to the user
+void printPgmDesc() {
+    cout << "This program compares two multiplication methods by multiplying "
+    "two integers without using the multiplication operator...\n" << endl;
+    cout << endl;
+}
+
+/// This function multiplies two numbers using a for loop
+/// @param multiplicand The first number to be multiplied
+/// @param multiplier The second number to be multiplied
+/// @param iterationCount The number of iterations needed for the answer
+/// @param answer is the answer
+void runLoopMethod(long& multiplicand, long& multiplier,
+                   long& iterationCount, long& answer) {
+    iterationCount = multiplier;
+    
+    // looping method
+    for (long i = 0; i < multiplier; i++) {
+        answer += multiplicand;
+    }
+}
+
+/// This function multiplies two numbers using the Russion Method
+/// @param multiplicand The first number to be multiplied
+/// @param multiplier The second number to be multiplied
+/// @param iterationCount The number of iterations needed for the answer
+/// @param answer is the answer
+void runRussianMethod(long& multiplicand, long& multiplier,
+                      long& iterationCount, long& answer) {
+    answer = 0;
+    iterationCount = 0;
+    
+    while (multiplicand > 0) {
+        iterationCount++;
+        // check the LSB for even or odd
+        if (multiplicand & 1) {
+            // if it's odd update the answer
+            answer += multiplier;
+        }
+        
+        // integer divide the multiplicand by 2 using a bit shift
+        multiplicand >>= 1;
+        
+        // double the multiplier
+        multiplier += multiplier;
+    }
+}
+
+/// This function prints the findings of the multiplication method
+/// @param iterationCount The number of times the loop occurred
+/// @param answer The answer
+void printResult(long& iterationCount, long& answer) {
+    cout << "The number of times through the loop: " << iterationCount << endl;
+    cout << "Answer: " << answer << endl << endl;
+}

@@ -1,0 +1,50 @@
+recursion uses stack  a function calls itself
+
+fun(param)
+    if base_cond
+        fun(param)
+
+must be a base condition that actually terminates the calling
+tracing in a tree is best
+
+3 rooms, 3 doors, each room has light
+> turn on light, go to next room         doing recursively, do iterative first, then reverse    acending
+> go to next room, turn on light         lights turned off differently                          descending
+
+recursion has 2 phases.... calling and returning  order is important and defines output
+like a rubber band or spring that comes back (returns)
+loop only has ascending phase, but recursion has ascending and descending phase
+it is all about the call stack , draw it if you have to
+recursive functions will consume memory and can be limited (stack size only lets so many calls)
+
+* Remember the 'master theorem'   T(n) = a T(n - b) + f(n)
+a = 1 , O(n ^ k + 1) or O(n f(n))
+a > 1, O(f(n) * a ^ n/b) or O(n^k a ^ n/b)
+a < 1, O(n ^ k) or O(f(n))
+
+by induction or tree, analysis should be the same
+handles tail or head recursion
+
+statics hang out with globals   won't be created everytime function is called
+static var has single copy and all recursive calls use the same copy
+
+EVERY RECURSIVE FUNCTION CAN BE WRITTEN AS A LOOP and vice-versa 
+
+* linear call self only 1 time (head/tail)...or other combos
+
+1) tail   call is last line in function    all operations peformed at calling time, nothing at returning time
+            better to use it as a loop that will be more space efficient
+               some compilers even look for tail recursion and make it a loop
+2) head   call is first, then operations...function has to do everything at time of returning
+            conversion to loop is a little more difficult, but still saves space
+3) tree        calls self more than 1 time
+                rember sum of gpc series... 2^0 + 2^1 + ... + 2^n  = 2^(n+1) - 1    for 2 calls
+4) indirect  more than one function, they cycle through calling eachother
+                control keeps alternating until both termination conditions met
+5) nested  the recursive call is inside at least one other recursive call
+                    recur_nested(int n)
+                       ...
+                       ...
+                       recur_nested(recur_nested(n))
+                the outter call(s) can't be made until inner call(s) finish     recursion inside recursion
+                nested recursion turns into a big tree

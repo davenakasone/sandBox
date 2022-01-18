@@ -1,0 +1,85 @@
+TODO
+    unfuck the A-B and B-A case to handle the 6 2* cases
+        need an inverter...already have add1, sub1
+        need unsinged2twoComp
+        need twoComp2unsinged
+        need bin2dec
+        need dec2bin
+
+single: -127, 126 ==> 1, 254   reserved: {0, 255}
+double: -1022, 1023 ==> 1, 2046
+
+
+
+
+used for the addtion example...add 2 neg numbers, pos exps
+
+    int A_sign = 1;
+    int A_exp[EXP_WID] = {1, 0, 0, 0, 0, 0, 0, 0};
+    int A_flt[FLT_WID] = {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1};
+
+    int B_sign = 1;
+    int B_exp[EXP_WID] = {1, 0, 0, 0, 0, 0, 1, 0};
+    int B_flt[FLT_WID] = {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1};
+
+
+////~~~~
+
+
+last year mid-term, add these:
+
+    int A_sign = 1;
+    int A_exp[EXP_WID] = {1, 1, 0, 0, 1, 1, 1, 1};
+    int A_flt[FLT_WID] = {0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    int B_sign = 0;
+    int B_exp[EXP_WID] = {1, 1, 0, 0, 1, 0, 0, 1};
+    int B_flt[FLT_WID] = {1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+
+////~~~~
+
+
+last year mid-term, short....change WIDTH
+
+    int A_sign = 1;
+    int A_exp[EXP_WID] = {1, 1, 0, 0, 1, 1, 1, 1};
+    int A_flt[FLT_WID] = {0, 1, 0, 1, 0, 0};
+
+    int B_sign = 0;
+    int B_exp[EXP_WID] = {1, 1, 0, 0, 1, 0, 0, 1};
+    int B_flt[FLT_WID] = {1, 0, 1, 1, 0, 0};
+
+
+////~~~~
+
+
+blanks....
+    int A_sign = 0;
+    int A_exp[EXP_WID] = {0, 0, 0, 0, 0, 0, 0, 0};
+    int A_flt[FLT_WID] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    int B_sign = 0;
+    int B_exp[EXP_WID] = {0, 0, 0, 0, 0, 0, 0, 0};
+    int B_flt[FLT_WID] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+
+////~~~~
+
+
+hw6 ... add and multiply
+    int A_sign = 1;
+    int A_exp[EXP_WID] = {0, 1, 1, 1, 1, 1, 1, 0};
+    int A_flt[FLT_WID] = {1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    int B_sign = 0;
+    int B_exp[EXP_WID] = {1, 0, 0, 0, 0, 0, 1, 1};
+    int B_flt[FLT_WID] = {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    int A_sign = 1;
+    int A_exp[EXP_WID] = {1, 1, 0, 0, 1, 1, 1, 1};
+    int A_flt[FLT_WID] = {0, 1, 0, 1, 0, 0};
+
+    int B_sign = 0;
+    int B_exp[EXP_WID] = {1, 1, 0, 0, 1, 0, 0, 1};
+    int B_flt[FLT_WID] = {1, 0, 1, 1, 0, 0};

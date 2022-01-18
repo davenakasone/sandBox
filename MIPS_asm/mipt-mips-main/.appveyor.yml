@@ -1,0 +1,26 @@
+version: "{branch}-ci-{build}"
+image: Visual Studio 2019
+
+branches:
+  only:
+  - main
+
+platform:
+  - mingw32
+  - mingw64
+
+install:
+- set PATH=C:\msys64\%platform%;C:\msys64\%platform%\bin;C:\projects\deps\ninja;C:\Libraries\boost_1_73_0;%PATH%
+
+before_build:
+- git submodule update --init
+
+build_script:
+- mkdir build && cd build
+- cmake ../simulator -G Ninja
+- ninja mipt-mips unit-tests cachesim
+
+test_script:
+- .\unit-tests
+- .\mipt-mips -b ..\tests\mips\mips-fib.bin -n 100000 --mars
+- .\cachesim -t ..\tests\mem_trace.json -s 32768 -w 32

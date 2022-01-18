@@ -1,0 +1,10 @@
+1. Simulate the circuit for the summation algorithm on GDP.  
+Take the screenshots of the simulation report. 
+You can use EDAPlayground or ModelSim.
+
+The testbench and the design files are copied into a single file  
+    Download single filehere.
+
+2. Determine the proper clock for the circuit using TimeQuest analysis. 
+Show the screenshots of the clock report (clock to clock)  
+before and after setting the correct value of the clock.

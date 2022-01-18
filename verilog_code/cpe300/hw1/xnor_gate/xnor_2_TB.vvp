@@ -1,0 +1,66 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7fb066405400 .scope module, "xnor_2_TB" "xnor_2_TB" 2 9;
+ .timescale -9 -9;
+v0x7fb06641bc60_0 .var "INP_A", 0 0;
+v0x7fb06641bd00_0 .var "INP_B", 0 0;
+v0x7fb06641bdb0_0 .net "OUTP", 0 0, L_0x7fb06641bfb0;  1 drivers
+S_0x7fb066404730 .scope module, "DUT" "xnor_2" 2 14, 3 15 0, S_0x7fb066405400;
+ .timescale -9 -9;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0x7fb06641be80 .functor XOR 1, v0x7fb06641bc60_0, v0x7fb06641bd00_0, C4<0>, C4<0>;
+L_0x7fb06641bfb0 .functor NOT 1, L_0x7fb06641be80, C4<0>, C4<0>, C4<0>;
+v0x7fb066404fc0_0 .net *"_ivl_0", 0 0, L_0x7fb06641be80;  1 drivers
+v0x7fb06641ba20_0 .net "a", 0 0, v0x7fb06641bc60_0;  1 drivers
+v0x7fb06641bac0_0 .net "b", 0 0, v0x7fb06641bd00_0;  1 drivers
+v0x7fb06641bb70_0 .net "y", 0 0, L_0x7fb06641bfb0;  alias, 1 drivers
+    .scope S_0x7fb066405400;
+T_0 ;
+    %vpi_call 2 21 "$dumpfile", "xnor_2_TB.vcd" {0 0 0};
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fb066405400 {0 0 0};
+    %vpi_call 2 23 "$display", "\012\011testing 2-input, 1-output XNOR gate:" {0 0 0};
+    %vpi_call 2 24 "$display", "\012\011a     b     Y" {0 0 0};
+    %vpi_call 2 25 "$display", "\011---------------" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fb06641bc60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fb06641bd00_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 30 "$display", "\011%d  |  %d  |  %d", v0x7fb06641bc60_0, v0x7fb06641bd00_0, v0x7fb06641bdb0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fb06641bc60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fb06641bd00_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 35 "$display", "\011%d  |  %d  |  %d", v0x7fb06641bc60_0, v0x7fb06641bd00_0, v0x7fb06641bdb0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fb06641bc60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fb06641bd00_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 40 "$display", "\011%d  |  %d  |  %d", v0x7fb06641bc60_0, v0x7fb06641bd00_0, v0x7fb06641bdb0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fb06641bc60_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fb06641bd00_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 45 "$display", "\011%d  |  %d  |  %d", v0x7fb06641bc60_0, v0x7fb06641bd00_0, v0x7fb06641bdb0_0 {0 0 0};
+    %vpi_call 2 47 "$display", "\012\012\011\011~ ~ ~ TEST COMPLETE ~ ~ ~\012\012" {0 0 0};
+    %vpi_call 2 48 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "xnor_2_TB.v";
+    "./xnor_2.v";

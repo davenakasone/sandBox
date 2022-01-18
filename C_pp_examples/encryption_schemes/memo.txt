@@ -1,0 +1,68 @@
+This project works as follows:
+
+    1) the "transmitter" inputs a message up to 200 characters. 
+            here, just change "original.txt"
+                in verilog, I will assume the inputs as 7-bit ASCII > [16:0] or use some I/O features
+                    see the ASCII conversion in "TOasciiRaw.txt"
+
+    2) the message is transferred from a [200][7] array to a [200][16] array
+            see "TOasciiEXP.txt"
+
+    3) the unencrypted [200][16] array from step 2 is encrypted to a new [200][16] array
+            here, the array is encrypted by making the MSB of each row = 1 and the year UNLV was founded ( 2^15 + 1957 )
+                see "TOcrypt.txt"
+    
+    4) at some point, the [200][16] encrypted array is transmitted to the "receiver"
+            the receiver hopefully has the circuitry to unlock the message
+                in this case, the receiver just needs a circuit to group x200 16-bit binary numbers and process them
+                    all the receiver has to do is:
+                        - get the decimal digit of the 16-bit number (or just use binary subtraction)
+                        - subtract KEY from the decimal number
+                        - find what ASCII character the result corresponds to
+                        - output the result
+                        - read the message
+
+            if "TOdecrypt.txt" matches "original.txt" then the message was successfully transmitted
+
+            in practice, the message can be transmitted multiple times and the receiver can see if all transmission are the same
+            in real life, the receiver will not have access to the original message
+    
+    5) The verilog test bench will serve as the regular module stimulator that it is
+        for simplicity, a section of the test bench will serve as the input
+            also, the test bench will fulfill the decryption and output
+                the main module will have similar roles since it is stimulated by the test bench
+                    if applied, the transmitter and receiver would have their own circuits
+                        driving the cycle is a FSM
+
+
+
+
+
+
+
+The encryption scheme is very weak for simplicity, and because we are short on time. 
+It can be anything you want as long as there is an algorithm or look up table to decrypt.
+If decryption can't be done, then it defeats the purpose.
+If someone can decrypt the message, then that also defeats the purpose.
+But this scheme can be expanded or modified in any way.
+This started to get very involved as soon as work began. There are some big numbers to work with.
+Implementing on a circuit without any I/O or ability to demonstrate (during virus outbreak of 2020) makes it all theoretical.
+C++ was a good way to get the idea in writing and provides a some what easy transition into verilog. 
+At least you can use some of the existing functions to generate some of the 1000's of inputs you will need. 
+The array index of C++ being reversed from the usual MSB...LSB can be negated if big endiness is always assumed.
+That is what I used here, and what will be used in Verilog. 
+
+get your input
+https://www.rapidtables.com/convert/number/ascii-to-binary.html
+
+count your characters
+https://www.lettercount.com/
+
+here is a chart
+https://www.ascii-code.com/
+
+verilog I/O
+http://chris.spear.net/pli/fileio.htm#$fread
+https://www.verilogpro.com/verilog-arrays-plain-simple/
+http://inferno-cpp2v.sourceforge.net/
+

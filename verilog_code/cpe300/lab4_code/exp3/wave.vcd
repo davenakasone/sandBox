@@ -1,0 +1,114 @@
+$date
+	Mon Sep 27 10:41:22 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 4 ! Q [3:0] $end
+$var reg 4 " D [3:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ clrN $end
+$var integer 32 % ii [31:0] $end
+$var integer 32 & jj [31:0] $end
+$var integer 32 ' seed [31:0] $end
+$scope module DUT $end
+$var wire 1 # clk $end
+$var wire 1 $ clrN $end
+$var wire 4 ( d_bus [3:0] $end
+$var reg 4 ) q_bus [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx )
+b1011 (
+b11110111111010111001111011000100 '
+b100 &
+b0 %
+1$
+0#
+b1011 "
+bx !
+$end
+#5
+b1011 !
+b1011 )
+1#
+#10
+b1101 "
+b1101 (
+b1011011101011101110110011010000 '
+b100 &
+b1 %
+0#
+#15
+b1101 !
+b1101 )
+1#
+#20
+b1111 "
+b1111 (
+b1110001111111111111100110011100 '
+b100 &
+b10 %
+0#
+#25
+b1111 !
+b1111 )
+1#
+#30
+b1010 "
+b1010 (
+b1001001110100111001000100101000 '
+b100 &
+b11 %
+0#
+#35
+b1010 !
+b1010 )
+1#
+#40
+b0 !
+b0 )
+b111 "
+b111 (
+b10010111001010010011111101110100 '
+b100 &
+0$
+b0 %
+0#
+#45
+1#
+#50
+b1111 "
+b1111 (
+b11010100101110101000010000000 '
+b100 &
+b1 %
+0#
+#55
+1#
+#60
+b1001 "
+b1001 (
+b11111100101101101000001001100 '
+b100 &
+b10 %
+0#
+#65
+1#
+#70
+b1011101100011111000101011011000 '
+b100 &
+b11 %
+0#
+#75
+1#
+#80
+b100 %
+0#

@@ -1,0 +1,258 @@
+$date
+	Wed Oct  6 23:40:22 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 8 ! result [7:0] $end
+$var wire 1 " n_is_0 $end
+$var reg 3 # ALU [2:0] $end
+$var reg 1 $ IE $end
+$var reg 1 % OE $end
+$var reg 2 & RAA [1:0] $end
+$var reg 1 ' RAE $end
+$var reg 2 ( RBA [1:0] $end
+$var reg 1 ) RBE $end
+$var reg 2 * SH [1:0] $end
+$var reg 2 + WA [1:0] $end
+$var reg 1 , WE $end
+$var reg 1 - clock $end
+$var reg 8 . n_input [7:0] $end
+$var integer 32 / idx [31:0] $end
+$scope module DUT $end
+$var wire 3 0 ALU [2:0] $end
+$var wire 1 $ IE $end
+$var wire 1 % OE $end
+$var wire 2 1 RAA [1:0] $end
+$var wire 1 ' RAE $end
+$var wire 2 2 RBA [1:0] $end
+$var wire 1 ) RBE $end
+$var wire 2 3 SH [1:0] $end
+$var wire 2 4 WA [1:0] $end
+$var wire 1 , WE $end
+$var wire 1 - clock $end
+$var wire 8 5 n_input [7:0] $end
+$var wire 8 6 rf_port_B [7:0] $end
+$var wire 8 7 rf_port_A [7:0] $end
+$var wire 8 8 result [7:0] $end
+$var wire 1 " n_is_0 $end
+$var wire 8 9 from_shifter [7:0] $end
+$var wire 8 : from_mux [7:0] $end
+$var wire 8 ; from_alu [7:0] $end
+$var reg 8 < to_register_file [7:0] $end
+$scope module comp1 $end
+$var wire 1 $ IE $end
+$var wire 8 = new_data [7:0] $end
+$var wire 8 > feedback [7:0] $end
+$var reg 8 ? from_mux [7:0] $end
+$upscope $end
+$scope module comp2 $end
+$var wire 2 @ RAA [1:0] $end
+$var wire 1 ' RAE $end
+$var wire 2 A RBA [1:0] $end
+$var wire 1 ) RBE $end
+$var wire 2 B WA [1:0] $end
+$var wire 1 , WE $end
+$var wire 1 - clock $end
+$var wire 8 C from_mux [7:0] $end
+$var wire 8 D port_B [7:0] $end
+$var wire 8 E port_A [7:0] $end
+$upscope $end
+$scope module comp3 $end
+$var wire 3 F ALU [2:0] $end
+$var wire 8 G A_bus [7:0] $end
+$var wire 8 H B_bus [7:0] $end
+$var reg 8 I from_alu [7:0] $end
+$upscope $end
+$scope module comp4 $end
+$var wire 2 J SH [1:0] $end
+$var wire 8 K from_alu [7:0] $end
+$var reg 8 L from_shifter [7:0] $end
+$upscope $end
+$scope module comp5 $end
+$var wire 1 % OE $end
+$var wire 8 M from_shifter [7:0] $end
+$var reg 8 N result [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bz N
+b0 M
+b0 L
+b0 K
+b0 J
+b0 I
+b0 H
+b0 G
+b0 F
+b0 E
+b0 D
+b1 C
+b0 B
+b0 A
+b0 @
+b1 ?
+b0 >
+b1 =
+b1 <
+b0 ;
+b1 :
+b0 9
+bz 8
+b0 7
+b0 6
+b1 5
+b0 4
+b0 3
+b0 2
+b0 1
+b0 0
+b0 /
+b1 .
+0-
+1,
+b0 +
+b0 *
+0)
+b0 (
+0'
+b0 &
+0%
+1$
+b0 #
+0"
+bz !
+$end
+#5
+1-
+#10
+b11 <
+b11 C
+b11 :
+b11 ?
+0-
+b1 +
+b1 4
+b1 B
+b11 .
+b11 5
+b11 =
+b1 /
+#15
+1-
+#20
+b111 <
+b111 C
+b111 :
+b111 ?
+0-
+b10 +
+b10 4
+b10 B
+b111 .
+b111 5
+b111 =
+b10 /
+#25
+1-
+#30
+b1111 <
+b1111 C
+b1111 :
+b1111 ?
+0-
+b11 +
+b11 4
+b11 B
+b1111 .
+b1111 5
+b1111 =
+b11 /
+#35
+1-
+#40
+b10000 9
+b10000 >
+b10000 L
+b10000 M
+b10000 ;
+b10000 I
+b10000 K
+b1111 6
+b1111 D
+b1111 H
+b1 7
+b1 E
+b1 G
+b10000 <
+b10000 C
+0"
+b10000 :
+b10000 ?
+0-
+b100 #
+b100 0
+b100 F
+b11 (
+b11 2
+b11 A
+1)
+1'
+b0 +
+b0 4
+b0 B
+0$
+b100 /
+#45
+b11111 <
+b11111 C
+b11111 :
+b11111 ?
+b11111 9
+b11111 >
+b11111 L
+b11111 M
+b11111 ;
+b11111 I
+b11111 K
+b10000 7
+b10000 E
+b10000 G
+1-
+#50
+b10000 <
+b10000 C
+b10000 :
+b10000 ?
+b10000 9
+b10000 >
+b10000 L
+b10000 M
+b10000 !
+b10000 8
+b10000 N
+b10000 ;
+b10000 I
+b10000 K
+b0 6
+b0 D
+b0 H
+0-
+1%
+b0 #
+b0 0
+b0 F
+b0 (
+b0 2
+b0 A
+0)
+0,
+#55
+1-

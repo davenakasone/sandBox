@@ -1,0 +1,15 @@
+module pre1a (
+                input wire [0:2] abc,
+                output wire [3:0] y1234
+            );
+    assign y1234[0] = (~abc[0] & ~abc[1] & ~abc[2]) |
+                      (abc[0] & abc[1] & abc[2]);
+    
+    assign y1234[1] = (~abc[0] & abc[1] & abc[2])   |
+                      (abc[0] & abc[1] & abc[2]);
+    
+    assign y1234[2] = (abc[0] & ~abc[1] & abc[2]);
+    
+    assign y1234[3] = 1'b0;
+
+endmodule

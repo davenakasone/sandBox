@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../arduino_uno_blink_c"
+		},
+		{
+			"name": "arduino_uno_blink_cpp",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

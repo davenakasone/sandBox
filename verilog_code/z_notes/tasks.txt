@@ -1,0 +1,39 @@
+
+for partitioning "behavior" into smaller segments
+defined in module and local to module (like functions)
+call from "always" , "inital" , or other task/functions (functions only from functions)
+    so a task can call a funciton and a task
+
+functions need at least 1 input arg, but does not have output or inout args
+tasks can be considered to have ports and they will connect externally
+
+can't invoke task from continous assigment, values placed on output or inout ports
+tasks can apply delays (unlike functions)
+input, output, and inout are all valid args to the task
+
+    task task_name;
+        input arg;
+        output ret;
+        inout both;
+
+        ...declarations
+        ...local variables
+        begin
+            stmts
+        end
+    endtask
+
+input or inout args are processed by the task stmts
+output or inout args are passed back to invocation/caller
+the "ports" of the task are only to pass between caller and task operations
+
+control to caller when done
+
+invoke from procedural statement { always or initial block }
+can even call itself
+output and inout args are passed back to the variables used as parameters to invoke
+output and inout vars must be "reg"
+
+!!! tasks usually can't be synthesized...only for TB
+
+////////~~~~~~~~END>  tasks.txt

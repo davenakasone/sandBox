@@ -1,0 +1,11 @@
+parameters are like const
+they assign values to constants you want (value can't be changed)
+
+defparam lets you modify a parameter
+
+ANSI verilog lets you declare parameters in the module decleration
+
+module mod_name #(params) (outp, inp)...
+
+
+////////~~~~~~~~END>  parameters.txt

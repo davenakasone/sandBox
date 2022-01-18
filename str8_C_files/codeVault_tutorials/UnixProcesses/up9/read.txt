@@ -1,0 +1,12 @@
+$ mkfifo sum
+$ clang up91.c -o up91
+$ clang up92.c -o up92
+
+launch 2 terminals
+
+$ ./up91    in one  ...blocks until other end opens
+$ ./up92    in the other   ... runs and completes program
+
+
+you could have taken elements in a loop {read/write}
+but it is easier to take advantage or array and read known element count

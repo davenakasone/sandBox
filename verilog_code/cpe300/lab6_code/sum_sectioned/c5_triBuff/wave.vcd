@@ -1,0 +1,85 @@
+$date
+	Wed Oct  6 09:28:47 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb $end
+$var wire 8 ! result [7:0] $end
+$var reg 1 " OE $end
+$var reg 8 # from_shifter [7:0] $end
+$var integer 32 $ ii [31:0] $end
+$var integer 32 % jj [31:0] $end
+$var integer 32 & seed [31:0] $end
+$scope module DUT $end
+$var wire 1 " OE $end
+$var wire 8 ' from_shifter [7:0] $end
+$var reg 8 ( result [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bz (
+b11010000 '
+b1010001111011001000110011010100 &
+b1000 %
+b0 $
+b11010000 #
+0"
+bz !
+$end
+#5
+b1000011 #
+b1000011 '
+b1000 %
+b11010010011110111101010111101 &
+b1 $
+#10
+b1000110 !
+b1000110 (
+b1000110 #
+b1000110 '
+b1000 %
+1"
+b11000101000101001111110010 &
+b10 $
+#15
+bz !
+bz (
+b1101100 #
+b1101100 '
+b1000 %
+0"
+b1111111001000101101100010000011 &
+b11 $
+#20
+b11001000 #
+b11001000 '
+b1000 %
+b10000001111010000001111101000000 &
+b100 $
+#25
+b1011101 !
+b1011101 (
+b1011101 #
+b1011101 '
+b1000 %
+1"
+b1010010010010001110111010111001 &
+b101 $
+#30
+bz !
+bz (
+b10010000 #
+b10010000 '
+b1000 %
+0"
+b10111100011101010001000111110 &
+b110 $
+#35
+b111 $
+#40

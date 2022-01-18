@@ -1,0 +1,473 @@
+$date
+	Thu Sep 23 09:49:29 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module best_tb $end
+$var wire 8 ! sum [7:0] $end
+$var wire 1 " nIS0 $end
+$var reg 3 # aluSelect [2:0] $end
+$var reg 1 $ buffEn $end
+$var reg 1 % clk $end
+$var reg 1 & muxSelect $end
+$var reg 8 ' nIn [7:0] $end
+$var reg 8 ( n_begin [7:0] $end
+$var reg 2 ) raa [1:0] $end
+$var reg 1 * rae $end
+$var reg 2 + rba [1:0] $end
+$var reg 1 , rbe $end
+$var reg 2 - shiftSelect [1:0] $end
+$var reg 2 . wa [1:0] $end
+$var reg 1 / we $end
+$scope module DUT $end
+$var wire 2 0 RAA [1:0] $end
+$var wire 1 * RAE $end
+$var wire 2 1 RBA [1:0] $end
+$var wire 1 , RBE $end
+$var wire 2 2 WA [1:0] $end
+$var wire 1 / WE $end
+$var wire 3 3 alu_op [2:0] $end
+$var wire 1 % clock $end
+$var wire 1 & input_enable_mux $end
+$var wire 8 4 n_in [7:0] $end
+$var wire 1 $ output_enable_buf $end
+$var wire 2 5 shift_op [1:0] $end
+$var wire 8 6 shifter_out [7:0] $end
+$var wire 8 7 run_sum [7:0] $end
+$var wire 8 8 rf_b [7:0] $end
+$var wire 8 9 rf_a [7:0] $end
+$var wire 8 : nnn [7:0] $end
+$var wire 1 " n_is_0 $end
+$var wire 8 ; alu_out [7:0] $end
+$var reg 8 < rf_inp [7:0] $end
+$scope module c1_mux $end
+$var wire 8 = input_data [7:0] $end
+$var wire 1 & mux_selector $end
+$var wire 8 > from_shifter [7:0] $end
+$var reg 8 ? to_register_file [7:0] $end
+$upscope $end
+$scope module c2_rf $end
+$var wire 1 % clock $end
+$var wire 8 @ from_mux [7:0] $end
+$var wire 2 A read_A_address [1:0] $end
+$var wire 1 * read_A_enable $end
+$var wire 2 B read_B_address [1:0] $end
+$var wire 1 , read_B_enable $end
+$var wire 2 C write_address [1:0] $end
+$var wire 1 / write_enable $end
+$var wire 8 D port_B [7:0] $end
+$var wire 8 E port_A [7:0] $end
+$upscope $end
+$scope module c3_alu $end
+$var wire 3 F alu_operation [2:0] $end
+$var wire 8 G rf_A [7:0] $end
+$var wire 8 H rf_B [7:0] $end
+$var reg 8 I to_shifter [7:0] $end
+$upscope $end
+$scope module c4_shift $end
+$var wire 8 J from_alu [7:0] $end
+$var wire 2 K shift_operation [1:0] $end
+$var reg 8 L to_bus [7:0] $end
+$upscope $end
+$scope module c5_tri_buff $end
+$var wire 1 $ enable $end
+$var wire 8 M from_shifter [7:0] $end
+$var reg 8 N result [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bz N
+bx M
+bx L
+b0 K
+bx J
+bx I
+bx H
+bx G
+b101 F
+bx E
+bx D
+b0 C
+b0 B
+b0 A
+b0 @
+bx ?
+bx >
+bx =
+b0 <
+bx ;
+bx :
+bx 9
+bx 8
+bz 7
+bx 6
+b0 5
+bx 4
+b101 3
+b0 2
+b0 1
+b0 0
+1/
+b0 .
+b0 -
+1,
+b0 +
+1*
+b0 )
+b11 (
+bx '
+0&
+0%
+0$
+b101 #
+x"
+bz !
+$end
+#5
+1"
+b0 :
+b0 ?
+b0 6
+b0 >
+b0 L
+b0 M
+b0 ;
+b0 I
+b0 J
+b0 9
+b0 E
+b0 G
+b0 8
+b0 D
+b0 H
+1%
+#10
+b11 <
+b11 @
+0"
+b11 :
+b11 ?
+b0 #
+b0 3
+b0 F
+0,
+0*
+b1 .
+b1 2
+b1 C
+1&
+b11 '
+b11 4
+b11 =
+0%
+#15
+1%
+#20
+b11 6
+b11 >
+b11 L
+b11 M
+b11 ;
+b11 I
+b11 J
+b11 8
+b11 D
+b11 H
+b11 <
+b11 @
+0"
+b11 :
+b11 ?
+b100 #
+b100 3
+b100 F
+b1 +
+b1 1
+b1 B
+1,
+1*
+b0 .
+b0 2
+b0 C
+0&
+0%
+#25
+b110 <
+b110 @
+b110 :
+b110 ?
+b110 6
+b110 >
+b110 L
+b110 M
+b110 ;
+b110 I
+b110 J
+b11 9
+b11 E
+b11 G
+1%
+#30
+b10 <
+b10 @
+b10 :
+b10 ?
+b10 6
+b10 >
+b10 L
+b10 M
+b0 8
+b0 D
+b0 H
+b10 ;
+b10 I
+b10 J
+b111 #
+b111 3
+b111 F
+b0 +
+b0 1
+b0 B
+0,
+b1 )
+b1 0
+b1 A
+b1 .
+b1 2
+b1 C
+0%
+#35
+b1 <
+b1 @
+b1 :
+b1 ?
+b1 6
+b1 >
+b1 L
+b1 M
+b1 ;
+b1 I
+b1 J
+b10 9
+b10 E
+b10 G
+1%
+#40
+b101 <
+b101 @
+b101 :
+b101 ?
+b101 6
+b101 >
+b101 L
+b101 M
+b10 8
+b10 D
+b10 H
+b101 ;
+b101 I
+b101 J
+b11 9
+b11 E
+b11 G
+b100 #
+b100 3
+b100 F
+b1 +
+b1 1
+b1 B
+1,
+b0 )
+b0 0
+b0 A
+b0 .
+b0 2
+b0 C
+0%
+#45
+b111 <
+b111 @
+b111 :
+b111 ?
+b111 6
+b111 >
+b111 L
+b111 M
+b111 ;
+b111 I
+b111 J
+b101 9
+b101 E
+b101 G
+1%
+#50
+b1 <
+b1 @
+b1 :
+b1 ?
+b1 6
+b1 >
+b1 L
+b1 M
+b1 ;
+b1 I
+b1 J
+b0 8
+b0 D
+b0 H
+b10 9
+b10 E
+b10 G
+b111 #
+b111 3
+b111 F
+b0 +
+b0 1
+b0 B
+0,
+b1 )
+b1 0
+b1 A
+b1 .
+b1 2
+b1 C
+0%
+#55
+b0 <
+b0 @
+1"
+b0 :
+b0 ?
+b0 6
+b0 >
+b0 L
+b0 M
+b0 ;
+b0 I
+b0 J
+b1 9
+b1 E
+b1 G
+1%
+#60
+b110 <
+b110 @
+0"
+b110 :
+b110 ?
+b110 6
+b110 >
+b110 L
+b110 M
+b1 8
+b1 D
+b1 H
+b110 ;
+b110 I
+b110 J
+b101 9
+b101 E
+b101 G
+b100 #
+b100 3
+b100 F
+b1 +
+b1 1
+b1 B
+1,
+b0 )
+b0 0
+b0 A
+b0 .
+b0 2
+b0 C
+0%
+#65
+b111 <
+b111 @
+b111 :
+b111 ?
+b111 6
+b111 >
+b111 L
+b111 M
+b111 ;
+b111 I
+b111 J
+b110 9
+b110 E
+b110 G
+1%
+#70
+b0 <
+b0 @
+1"
+b0 :
+b0 ?
+b0 6
+b0 >
+b0 L
+b0 M
+b0 ;
+b0 I
+b0 J
+b0 8
+b0 D
+b0 H
+b1 9
+b1 E
+b1 G
+b111 #
+b111 3
+b111 F
+b0 +
+b0 1
+b0 B
+0,
+b1 )
+b1 0
+b1 A
+b1 .
+b1 2
+b1 C
+0%
+#75
+b110 <
+b110 @
+0"
+b110 :
+b110 ?
+b110 6
+b110 >
+b110 L
+b110 M
+b110 !
+b110 7
+b110 N
+b110 ;
+b110 I
+b110 J
+b110 9
+b110 E
+b110 G
+1$
+b0 #
+b0 3
+b0 F
+b0 )
+b0 0
+b0 A
+b0 .
+b0 2
+b0 C
+0/
+1%
+#80
+0%

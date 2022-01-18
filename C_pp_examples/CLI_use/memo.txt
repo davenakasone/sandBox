@@ -1,0 +1,34 @@
+Get the multiplicand from the command-line arguments.
+Get the multiplier from the command-line arguments.
+Set an accumulator: answer = 0;
+Loop "multiplier" times:
+    answer = answer + multiplicand
+Output the answer.
+
+Multiplicand    Multiplier
+           9            13
+
+The left column is progressively halved and the integer floor is kept. 
+This progression continues all the way down to 1. 
+The right column is doubled as many times as there are digits in the left column.
+
+Multiplicand    Multiplier
+           9            13
+           4            26
+           2            52
+           1           104
+
+Now remove any rows that have even numbers in the multiplicand column:
+Multiplicand    Multiplier
+           9            13
+           1           104
+
+The answer is found by adding all the numbers remaining in the Multiplier column.
+Multiplicand    Multiplier
+   13
++ 104
+-----
+  117
+
+
+  

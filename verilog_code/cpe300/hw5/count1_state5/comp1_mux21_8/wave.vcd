@@ -1,0 +1,62 @@
+$date
+	Fri Sep 17 00:10:13 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module mux21_8_tb $end
+$var wire 8 ! outRF [7:0] $end
+$var reg 8 " inData [7:0] $end
+$var reg 8 # inShifter [7:0] $end
+$var reg 1 $ select $end
+$var integer 32 % ii [31:0] $end
+$var integer 32 & jj [31:0] $end
+$var integer 32 ' seed [31:0] $end
+$scope module DUT $end
+$var wire 8 ( from_shifter [7:0] $end
+$var wire 8 ) input_data [7:0] $end
+$var wire 1 $ mux_selector $end
+$var reg 8 * to_register_file [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b101100 *
+b10011000 )
+b101100 (
+b11100010100101100000100110101100 '
+b1000 &
+b0 %
+0$
+b101100 #
+b10011000 "
+b101100 !
+$end
+#10
+b1000011 !
+b1000011 *
+b11001010 "
+b11001010 )
+b1000011 #
+b1000011 (
+b1000 &
+b10110110111011101000100110101101 '
+b1 %
+#20
+b11110100 !
+b11110100 *
+b11110100 "
+b11110100 )
+b10110000 #
+b10110000 (
+b1000 &
+1$
+b11110100001101011101010111010 '
+b10 %
+#30
+b11 %
+#40

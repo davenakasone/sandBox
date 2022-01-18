@@ -1,0 +1,138 @@
+$date
+	Fri Sep 17 03:48:06 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module register_file_tb $end
+$var wire 8 ! outB [7:0] $end
+$var wire 8 " outA [7:0] $end
+$var reg 2 # RAA [1:0] $end
+$var reg 1 $ RAE $end
+$var reg 2 % RBA [1:0] $end
+$var reg 1 & RBE $end
+$var reg 2 ' WA [1:0] $end
+$var reg 1 ( WE $end
+$var reg 1 ) clk $end
+$var reg 8 * inP [7:0] $end
+$var integer 32 + fullCycle [31:0] $end
+$var integer 32 , ii [31:0] $end
+$var integer 32 - seed [31:0] $end
+$scope module DUT $end
+$var wire 1 ) clock $end
+$var wire 8 . from_mux [7:0] $end
+$var wire 2 / read_A_address [1:0] $end
+$var wire 1 $ read_A_enable $end
+$var wire 2 0 read_B_address [1:0] $end
+$var wire 1 & read_B_enable $end
+$var wire 2 1 write_address [1:0] $end
+$var wire 1 ( write_enable $end
+$var wire 8 2 port_B [7:0] $end
+$var wire 8 3 port_A [7:0] $end
+$upscope $end
+$scope task rand_reg $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 3
+b0 2
+b0 1
+b0 0
+b0 /
+b0 .
+b1111100111 -
+b0 ,
+b1010 +
+b0 *
+0)
+1(
+b0 '
+1&
+b0 %
+1$
+b0 #
+b0 "
+b0 !
+$end
+#1
+b10100000 "
+b10100000 3
+b10100000 !
+b10100000 2
+b10100000 *
+b10100000 .
+b111010110000100110010100011111 -
+#5
+1)
+#10
+0)
+#11
+b1 ,
+#12
+b1101 "
+b1101 3
+b1101 !
+b1101 2
+b1 '
+b1 1
+b1 #
+b1 /
+b1 %
+b1 0
+b1101 *
+b1101 .
+b1101001100101011110101010111 -
+#15
+1)
+#20
+0)
+#22
+b10 ,
+#23
+b110101 "
+b110101 3
+b110101 !
+b110101 2
+b10 '
+b10 1
+b10 #
+b10 /
+b10 %
+b10 0
+b110101 *
+b110101 .
+b111011001010011110110010001111 -
+#25
+1)
+#30
+0)
+#33
+b11 ,
+#34
+b11000010 "
+b11000010 3
+b11000010 !
+b11000010 2
+b11 '
+b11 1
+b11 #
+b11 /
+b11 %
+b11 0
+b11000010 *
+b11000010 .
+b1000010110111001101001011000111 -
+#35
+1)
+#40
+0)
+#44
+b100 ,
+#45
+1)
+#49
