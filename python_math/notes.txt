@@ -20,6 +20,9 @@ witout ".py" extension, file will probably be a module (good for functions and c
 from <mod_name> import <class/fun_name> <> <> ...
 
 
+packeages are modules of related funtionality
+there are some you should really know:
+https://matplotlib.org/stable/index.html  // no pylab...use pyplot (namespace pollution)
 
 
 
