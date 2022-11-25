@@ -58,6 +58,18 @@ def calc_epe(ep_r, d, W) :
     epe = tempA + tempB * (1 / tempC)
     return epe
 
+def Zchar_wd(ep_e, d, W) :
+    """eqn_3.196, characteristic impedance"""
+    Z0 = 0
+    rat = W/d
+    if rat < 1.0 :
+        print(f"\nW/d = {rat:0.3f}  ,  using Z0 with W/d < 1")
+        Z0 = Zchar_wd_lt1(ep_e, d, W)
+    else :
+        print(f"\nW/d = {rat:0.3f}  ,  using Z0 with W/d > 1")
+        Z0 = Zchar_wd_gt1(ep_e, d, W)
+    return Z0
+
 def Zchar_wd_lt1(ep_e, d, W) :
     """eqn_3.196, characteristic impedance, given W/d <= 1"""
     tempA = 60 / numpy.sqrt(ep_e)
@@ -177,7 +189,7 @@ def main() :
     os.system("clear")
     #ex37()
     #ex38()
-    mystrip(False)
+    mystrip(True)
     print("\n\n\t\t ~ ~ ~ PROGRAM COMPLETE ~ ~ ~\n\n")
 
 
@@ -262,13 +274,14 @@ def ex38() :
 
 def mystrip(plot_epef) :
     # given :
-    epr     = 4.5
-    Rs      = 0.026
-    Z0      = 50.0
-    d       = 1.0e-3
-    phid    = numpy.deg2rad(270.0)
-    delta = numpy.arctan(0.001)
-    ftarget = 1.0e9
+    multlam = 10                      # length multiplier (make microstrip > 1 wavelength)
+    epr     = 4.2                     # datasheet makes this claim at 1 GHz, always < 5.4
+    Rs      = 0.026                   # known material property
+    Z0      = 50.0                    # given target
+    d       = 1.6e-3                  # data sheet
+    phid    = numpy.deg2rad(360.0)    # irrelevant
+    delta   = numpy.arctan(0.001)     # known material property
+    ftarget = 20.0e9                  # make high enough to keep wave length reasonable
     print("\ngiven:")
     print(f"\tep_r  =  {epr:0.2f}, relative dielectric constant of the choosen slab")
     print(f"\tRs    =  {Rs:0.3f} ohms, copper surface resistance in GHz range")
@@ -295,7 +308,7 @@ def mystrip(plot_epef) :
     # and plot the ep_e across frequency
     if plot_epef == True :
         ptz = 500
-        freqz = numpy.linspace(0, 20.0e9, ptz)
+        freqz = numpy.linspace(0, 40.0e9, ptz)
         epez = numpy.zeros(ptz)
         for ii in range(0, ptz) :
             epez[ii] = epef(epr, epe, Z0, d, freqz[ii])
@@ -323,17 +336,27 @@ def mystrip(plot_epef) :
     vp = calc_vp(epe)
     beta = calc_beta(k0, epe)
     print(f"\tvp   = {vp:0.3E} m/s, quasi-static TEM phase velocity")
-    print(f"\tbeta = {vp:0.3E} m/s, quasi-static TEM propagation constant")
+    print(f"\tbeta = {beta:0.3E} m/s, quasi-static TEM propagation constant")
     
     print("\n#6,  confirm the threshold frequencies (operate below these) :")
     ft1 = calc_ft1(d, epr)
     ft2 = calc_ft2(d, epr)
     ft3 = calc_ft3(d, epr, W)
     ft4 = calc_ft4(d, epr)
-    print(f"\tft1 =  {ft1/1.0e9:0.3f} GHz, TM1 cutoff, within 35% - 66% of fc1")
-    print(f"\tft2 =  {ft2/1.0e9:0.3f} GHz, TE1 cutoff")
-    print(f"\tft3 =  {ft3/1.0e9:0.3f} GHz, wide cutoff")
-    print(f"\tft4 =  {ft4/1.0e9:0.3f} GHz, thick cutoff")
+    print(f"\tf_operate =  {ftarget/1.0e9:0.3f} GHz, also target/design frequency")
+    print(f"\tft1       =  {ft1/1.0e9:0.3f} GHz, TM1 cutoff, within 35% - 66% of fc1")
+    print(f"\tft2       =  {ft2/1.0e9:0.3f} GHz, TE1 cutoff")
+    print(f"\tft3       =  {ft3/1.0e9:0.3f} GHz, wide cutoff")
+    print(f"\tft4       =  {ft4/1.0e9:0.3f} GHz, thick cutoff")
+    
+    print("\n# 7,  confirm the results :")
+    lam = const.c / ftarget
+    mlen = lam * multlam
+    print(f"\td      =  {d:0.3E} m                       ,  thickness of the dielectric")
+    print(f"\tW      =  {W:0.3E} m                       ,  width of the microstrip")
+    print(f"\tlamda  =  {lam:0.3E} m                     ,  wavelength")
+    print(f"\tlength =  {mlen:0.3E} m                    ,  how long to size the microstrip -->  {multlam} wavelengths")
+    print(f"\tZ0     =  {Zchar_wd(epe, d, W):0.3f} ohms  ,  target = {Z0:0.3f} ohms")
     
     
 ####~~~~

@@ -29,7 +29,7 @@ class Cconst() :
 const = Cconst()
 
 def lorentz(v: float) -> float :
-    return (1 / numpy.sqrt(1 - (v**2/const.c**2)))
+    return (1 / numpy.sqrt(1 - (v**2 / const.c**2)))
 
                              
 def main() :
