@@ -16,6 +16,15 @@ https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
 
 https://sqlitebrowser.org/
 https://www.sqlite.org/download.html
+https://www.sqlite.org/datatypes.html
 
 https://en.wikipedia.org/wiki/SQL
 
+https://tsugi.org/
+
+https://en.wikipedia.org/wiki/Web_crawler
+
+https://www.cloudflare.com/
+
+https://jupyter.org/
+https://jupyterlab.readthedocs.io/en/stable/
