@@ -36,6 +36,8 @@ https://jupyter.org/hub
 https://mybinder.org/
 
 https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example
+https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas
 https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb
 
 https://pandas.pydata.org/
+https://stackoverflow.com/questions/68275857/urllib-error-urlerror-urlopen-error-ssl-certificate-verify-failed-certifica

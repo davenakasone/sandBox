@@ -62,3 +62,4 @@ python can only abstract away so much, it is a high-level oo langauge
 
 pandas is the other tool (sits on numpy and matplotlib)
 for using data, very mature library
+
