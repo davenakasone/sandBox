@@ -1,0 +1,87 @@
+/*
+    for CSS colors webpage
+
+    rgb(red, green, blue)    // 0==none, 255==100%, additave
+        primary, secondary, tertiary -> pick any
+        hex is the same
+
+    hsl (hue, saturation, lightness)  // like rgb()
+    [0:360], [0:100]%, [0:100]%
+
+    linear-gradient(gradientDirection, color1, color2,
+    [0:360]deg (180 default), rgb()/hsl()/... [0:100]%, rgb()/hsl()/... [0:100]%  (% stop optional)
+        transition of colors
+    
+    box-shadow: offsetX offsetY blurRadius  spreadRadius color
+        box-shadow: 5px 5px green; // omit blurRadius, spreadRadius
+        box-shadow: 5px 5px 5px green; // omit spreadRadius, include blurRadius
+        box-shadow: 5px 5px 5px 5px green; // omit spreadRadius, include blurRadius
+*/
+
+h1 {
+    text-align: center;
+    background-color: rgb(100, 100, 100);
+}
+
+.marker {
+    height: 25px;
+    width: 200px;
+    margin: 10px auto;
+}
+.red {
+    /*background-color: red;*/
+    /*background-color: rgb(255, 0, 0);*/
+    /*background: rgb(255, 0, 0);*/
+    /*background: linear-gradient(90deg, rgb(255,0,0) 75%, rgb(0,255,0), rgb(0,0,255));*/
+    /*background: linear-gradient(180deg, rgb(255,0,0) 75%, rgb(0,255,0), rgb(0,0,255));*/
+    /*background: linear-gradient(180deg, rgb(255,0,0) 0%, rgb(0,255,0) 50%, rgb(0,0,255) 100%);*/
+    background: linear-gradient(180deg, rgb(122,74,14) 0%, rgb(245,62,113) 50%, rgb(162,27,27) 100%);
+    /*box-shadow: 5px 5px red;*/
+    /*box-shadow: 0 0 20px 0 red;*/
+    box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+}
+
+.green {
+    /*background-color: green;*/
+    /*background-color: rgb(0, 255, 0);*/
+    /*background-color: #00FF00;*/
+    background: linear-gradient(#55680D, #71F53E, #116C31);
+    /*box-shadow: 5px 5px 5px green;*/
+    box-shadow: 0px 0px 20px 0px #3B7E20CC;
+}
+.blue {
+    /*background-color: blue;*/
+    /*background-color: rgb(0, 0, 255);*/
+    /*background-color: hsl(240, 100%, 50%);*/
+    background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%));
+    /*box-shadow: 0 0 0 5px blue;*/
+    box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8);
+}
+
+.container {
+    background-color: rgb(240, 240, 240);
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.sleeve {
+    width:110px;
+    height:25px;
+    /*background-color: white;
+    opacity: 0.5;*/
+    background-color: rgba(255,255,255,0.5);
+    /*border-left-width: 10px;
+    border-left-style:solid;
+    border-left-color: black;*/
+    border-left:10px double rgba(0, 0, 0, 0.75);
+}
+
+.cap {
+    height:60px;
+    width:25px;
+}
+
+.cap, .sleeve {
+    display:inline-block;
+}

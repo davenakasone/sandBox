@@ -1,0 +1,110 @@
+/* styles */
+
+h1, h2, p {
+    text-align: center;
+}
+
+/*
+body {
+    background-color: burlywood;
+}
+*/
+
+.established {
+    font-style: italic;
+}
+
+body {
+    background-image: url(https://assets3.thrillist.com/v1/image/2969704/1584x832/scale;webp=auto;jpeg_quality=60;progressive.jpg);
+    font-family: sans-serif;
+    padding:20px;
+}
+/*
+div {
+    //width: 300px;
+    width:80%;
+    background-color: burlywood;
+    margin-right: auto;
+    margin-left: auto;
+}
+*/
+
+img {
+    display:block;
+    margin:auto;
+}
+
+h1, h2 {
+    font-family: Impact, serif;
+}
+h1 {
+    font-size: 40px;
+    margin-top:0px;
+    margin-bottom:15px;
+}
+h2 {
+    font-size: 30px;
+}
+hr {
+    height: 2px;
+    background-color: brown;
+    border-color: brown;
+}
+.menu {
+    width:80%;
+    background-color: burlywood;
+    margin-right: auto;
+    margin-left: auto;
+    /*
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    */
+    padding: 20px;
+    max-width: 500px;
+}
+
+.flavor, .dessert {
+    text-align: left;
+    width:75%;
+}
+
+.price {
+    text-align: right;
+    width:25%;
+}
+
+.item p {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.bottom-line {
+    margin-top: 25px;
+}
+
+/*FOOTER*/
+
+footer {
+    font-size: 14px;
+}
+
+a {
+    color:black;
+}
+a:visited {
+    color:grey;
+}
+a:hover {
+    color:brown;
+}
+a:active {
+    color:white;
+}
+
+.address {
+    margin-bottom: 5px;
+}

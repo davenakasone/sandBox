@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <p>fill this out</p>
+        <form action="https://register-demo.freecodecamp.org" method="post">
+            <fieldset>
+                <label for="first-name">Enter first name: <input id="first-name" type="text" required/>
+                </label>
+                <label for="last-name">Enter last name: <input id="last-name" type="text" required/>
+                </label>
+                <label for="email">Enter email: <input id="email" type="email" required/>
+                </label>
+                <!---<label for="new-password">Make new password: <input id="new-password" type="password" required minlength="8"/>-->
+                <label for="new-password">Make new password: <input id="new-password" type="password" required pattern="[a-z0-5]{8,}"/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="personal-account">
+                    <input type="radio" name="account-type" id="personal-account" class="inline"/> Personal Account
+                </label>
+                <label for="business-account">
+                    <input type="radio" name="account-type" id="business-account" class="inline"/> Business Account
+                </label>
+                <label for="terms-and-conditions">
+                    <input type="checkbox" required id="terms-and-conditions" class="inline"/> I read the <a href="https://wikileaks.org/" target="_blank">rules</a>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="pic">Upload picture: <input type="file" id="pic" name="pic"/></label>
+                <label for="age">Age: <input type="number" max="120" min="13" id="age" name="age"/></label>
+                <label for="refer">How did you hear about us? <select id="refer">
+                    <option value="" id="refer">(select one)</option>
+                    <option value="1" id="refer">news</option>
+                    <option value="2" id="refer">internet</option>
+                    <option value="3" id="refer">radio</option>
+                    <option value="4" id="refer">other</option>
+                </select>
+                </label>
+                <label for="bio">Provide biography: <textarea id="bio" rows="3" cols="30" placeholder="I like beaches" name="bio"></textarea>
+                </label>
+            </fieldset>
+            <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>

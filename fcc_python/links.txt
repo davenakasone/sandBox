@@ -41,3 +41,9 @@ https://colab.research.google.com/github/googlecolab/colabtools/blob/master/note
 
 https://pandas.pydata.org/
 https://stackoverflow.com/questions/68275857/urllib-error-urlerror-urlopen-error-ssl-certificate-verify-failed-certifica
+
+https://www.youtube.com/watch?v=w2z-HAf1qQk
+https://reactjs.org/
+https://nodejs.org/en/
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/

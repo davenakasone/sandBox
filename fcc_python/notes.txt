@@ -63,3 +63,8 @@ python can only abstract away so much, it is a high-level oo langauge
 pandas is the other tool (sits on numpy and matplotlib)
 for using data, very mature library
 
+$ node // run nodejs from terminal
+definetly start with js...eventually pick your path (react+redux) or (angular+typescript+...)
+[var] is bad...it will make everything global and let you step all over the declared variable
+[let] is best for most situations (guarunteed 1x declaration, scoped, etc)
+typescript is better (datatype is explicit)

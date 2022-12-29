@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>mycatapp</title>
+    </head>
+    <body>
+        <main>
+            <h1>CatPhotoApp</h1>
+                <section>
+                    <h2>Cat Photos</h2>
+                    <!--TODO: add link to cat photos-->
+                    <p>Click here to view more cat photos</p>
+                    <img 
+                        src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg" 
+                        alt="cat photo"
+                    >
+                    <p>check stock here: 
+                        <a href="https://finance.yahoo.com/quote/PLTR?p=PLTR&.tsrc=fin-srch" 
+                            target="_blank">PLTR</a>
+                    </p>
+                    <a href = "https://finance.yahoo.com/quote/AMD?p=AMD&.tsrc=fin-srch" 
+                        target="_blank">
+                            <img src="https://cdn.pixabay.com/photo/2016/03/28/12/35/cat-1285634_1280.png">
+                    </a>
+                </section>
+                <section>
+                    <h2>Cat Lists</h2>
+                    <h3>Things Cats Like:</h3>
+                        <ul>
+                            <li>juice</li>
+                            <li>rock</li>
+                            <li>smack</li>
+                        </ul>
+                        <figure>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Catnip_flowers.jpg"
+                                alt="catnip">
+                            <figcaption>cats <em>like</em> catnip</figcaption>
+                        </figure>
+                        <h3>Things Cats Hate:</h3>
+                        <ol>
+                            <li>animal enforcement</li>
+                            <li>dogs</li>
+                            <li>shrodinger</li>
+                        </ol>
+                        <figure>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Schrodingers_cat.svg/2560px-Schrodingers_cat.svg.png"
+                                alt="shrodinger likes to kill cats">
+                            <figcaption>shrodinger likes to <strong>kill</strong> cats</figcaption>
+                        </figure>
+                </section>
+                <section>
+                    <h2>Cat Form</h2>
+                    <form action="https://freecatphotoapp.com/submit-cat-photo"></form>
+                    <fieldset>
+                        <legend>Select wild or indoor:</legend>
+                        <label><input type="radio" id="ferral" name="ferral-pet" value="ferral" checked> Ferral</label>
+                        <label><input type="radio" id="pet" name="ferral-pet" value="pet"> Pet</label>
+                    </fieldset>
+                    <input type="text" name="email" placeholder="your_email@any.com" required>
+                    <button type="submit">Submit</button>
+                    <fieldset>
+                        <legend>Enter personality of cat:</legend>
+                        <input type="checkbox" id="player" name="personality" value="player" checked> <label for="player">player</label>
+                        <input type="checkbox" id="hustler" name="personality" value="hustler"> <label for="hustler">hustler</label>
+                        <input type="checkbox" id="savage" name="personality" value="savage"> <label for="savage">savage</label>
+                        <input type="checkbox" id="hater" name="personality" value="hater"> <label for="hater">hater</label>
+                    </fieldset>
+                </section>
+        </main>
+        <footer>
+            <p>MIT <a href="https://opensource.org/licenses/MIT" target="_blank">license</a></p>
+        </footer>
+    </body>
+</html>
