@@ -68,3 +68,6 @@ definetly start with js...eventually pick your path (react+redux) or (angular+ty
 [var] is bad...it will make everything global and let you step all over the declared variable
 [let] is best for most situations (guarunteed 1x declaration, scoped, etc)
 typescript is better (datatype is explicit)
+
+naked js files can only run from index.js
+you have to package or make modules

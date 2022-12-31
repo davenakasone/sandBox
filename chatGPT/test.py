@@ -1,0 +1,28 @@
+"""
+    need a session token: https://chat.openai.com/chat
+        - might not be free in the future
+        - need an internet connection
+        - [rclick]:[inspect], go to [Application][Cookies]
+        - copy the value in "__Secure-next-auth.callback-url"
+    
+    $ python3 -i test.py
+"""
+import os
+import sys
+from pprint import pprint
+from pyChatGPT import ChatGPT
+os.system("clear")
+
+session_token = "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..QSG3nt3zBvlezr_q.MRrsRhl6BSE2w55-OYNt5HVRic72jY73Tn1cEk7W3cXL4AqTTr50m5VhUaW3ZC5dlDgUUNhmxMxJG8XduwIko2-5EBTfsXEetTILwSP6CLoH8wwclokdv7-sQIHgWrwwbtk8Z7MR_JnrlT_15mVTYqRe4kUOJR6A588HJi7Jxg0N66fWYPqhNRYdrFPnDiF4puS3l3TtBpHoLNLToTs34ruDxpIRJIvOzFNM9PSkn6ays2BBbLoyqvZNdE7Sk7_1EogCGzUyjqzpFYCPYM2mSYoFUluoITiSboTTQHwJB59ZPA1Ld_fFoapkYL9YzmCGQ_GPyuv4olPZu2Mtev2Ul-PEsPoNCYInzBWOvqdzpJWoKrMxuagSVITVKT4Mjag7rrEvCp7nqXuSKpcAURjh1iRdgxjcb_D8uo1YdDtvnxDhBTUxLHjn8inShKcchpwQaK_TABAQyCOgfrkUGdHcEdwQDZnSgr4MS-xnodmTk6Vjfqz9kWRnspsaLwmia9Imat2wgtV7ilDH7DZDlvyjjmLsrtYUaWZIYAqJSzcVV00v86RuFmeaz89xb4eI-T1aztcY8HcYfuDASQiGT0q9RbrihVNA6TOsWFSGn-7xUPWqww4mcVninCSmpdoIONeZrNSJVyRuGoPDXx_mQWUaFDLh4A5dc871KV2ggRQtGbPpnGH84mGWB-H3GMpyiVvM51WdxT0vBvqhy1u-7bPbT1c1zxCTIAuTXIXwBH9iCH5-7Sv4ootZ4vKfg_B6lntW48N8BFBPgLqQblt2_DVR5uHNKsg7qS3oZN2MeT0LZUdncI0DQkNManK0bwPTX7V871ITna_8AKaTf_QQp4ep8x8gquRXZBx8mQ1PEC2umhVquhc5d9Gqoxj3si4kvb3bZBM_A2STOFOarsaEkMau640tU2dqmKy1FhVjdE0uG1lqQw5-Zr6Y66Q7OzTiF6_s4iNXKgg30iTpIE7pivvuTJspNTs3BJsJQ4atDIY81MNqn10Pml7ZU8z2WvRSfNLnCbr3sdBS8sy-bigewZ0dNsgoxUf9bs5e7XAxYdxNrbywGC-uajb0oYKrkuykaoFA8KZwG3hGJyl1-_UoF3IP7FsaJXjPQOKWm1G4ilys6b1biKBaseXG7pM0nMh0NNbxSVokdJATOM6kEI_ig2RYEMOIbz1sphYHh6y8jZagTLU9IulsiVe1oKd1Cl_eEQv1W9U0tdj6T8xqFEl7PTB7UnqbTrWVJDAkKaprGpoo-vLEAjzrVy0bKjY04YllIgVmBvpyRSZ09TgTOKw2jkAPjYPFjO7kiAa7PgWidpbHwL6kgLNNHFMFfl9VfUJX3dTgk5Ete_g7D5mAHZev1yoqjHBLfFWYqiq70zl6Wdkm4oEQtdEOIjqFgJbdaJpgTvL_GivbdrqCpXw4odytL4SVywp4grradJ-qxrIX-Nr1Y0VSpqp9h40MMT-bLE8dFD5svCk7-o7MqhMfJsiSz2PtvdbT17JqkeNwSsKTyUHRZuU16wl2UUPOOaAT4WM5Qw8DvJ5gSz7nhoDkd40YhmcN-RDcDop37oprI34O6AdtzXf_1E9UamQ_SFhN7xGDDSE_6-8eb5u1zpLincOILhcUXES0b9dPV-k5ICA6oYgGKQD170Q9TASWesIvSu_-x8T8_5blbTVKcpDh5FvkXuGcfIxHTmlW6Tm_PcQBck2pN4LqrVoyVsVd2q8dxOrbciUAvGFlnLFrjW0DRSW3PeA5aSdwfgR5IWTcPl8L1erIYoHtpln-zlw7GvQ7lR6oWWNB5S4YnCyHr-GFsjDqCo9Z9ptiHYMzjys_03XWilBTtVTTks5-0EvYFIvK-3wDCztNhsy7Hgqh0d2ySeD_zsWVn-LC8nNrtqll23dX1f7sthCBLtpZn0mgRYTTH2XKaK9wayZXO49el-LHidtqOImKV9VfoCpyT_7CuKQMSqvZETvqAEWexSZU2v-gilJPPbZKn5JLuR5PnJ_7AVI9zjXkO8_-ZYDwmDTV3IJpAPE-cEcr7feWW1ByfCIJTqDx2opWdq0QiPupSFsStcBapnBCabYHv2vnZiIozYFGv3_HI1ah8hdtWlwqd-tXYFV3BWfMc_b2ptAzbT0f0FQHGfHIFKGdFPoau9KrjFYbDW2R1z3FcRAoGzQdnpE52X2qRHt7KgJiYMpmzYVPWQWkUxDAS9vswiNH6cOfFGxyTzGUqAh0MsKsnJ6ZfElCFg0ZAJnhnk3AolRJsqncRNkUjM9oPXewaqnM5ja8Arq2gMRGqPkJ.dn06aej7VTcG5vL089buaQ"
+
+api = ChatGPT(session_token)
+
+def ax(question:str="What is C?") -> None :
+    answer = api.send_message(question)
+    pprint(f"{answer['message']}")
+
+def stop() -> None :
+    print("\n\n\t\t ~ ~ ~ SCRIPT COMPLETE ~ ~ ~\n\n")
+    sys.exit()
+    
+####~~~~END>  test.py

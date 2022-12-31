@@ -6,7 +6,8 @@
     < 5 >  match (all, g-flag)
     < 6 >  wild card .
     < 7 >  char set [abc]
-    < 8 >  char range [a-f]
+    < 8 >  char range [a-f] (hyphen)
+    < 9 >  number range [0-5] (hyphen)
 */
 console.clear();
 console.log("\n");
@@ -76,10 +77,21 @@ console.log(testRgx);
 console.log(testStr.match(testRgx));
 console.log("\n");
 
-// < 8 >  char range [a-f]
+// < 8 >  char range [a-f] (hypen)
 testStr = "cat bat mat";
 testRgx = /[a-e]at/g; // char range
 console.log(testStr);
 console.log(testRgx);
 console.log(testStr.match(testRgx));
 console.log("\n");
+
+// < 9 >  number range [0-5] (hyphen)
+testStr = "1there 2are3 four4 numbers in this string";
+testRgx = /[0-9]/g; // char range
+console.log(testStr);
+console.log(testRgx);
+console.log(testStr.match(testRgx), " size: ", testStr.match(testRgx).length);
+console.log("\n");
+
+
+////////~~~~~~~~~END>  _7_regex_intro.js
