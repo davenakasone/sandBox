@@ -1,0 +1,12 @@
+decorators allow behavior changes of a function without modifying the function
+- add debug/logging
+- validate funtion inputs + outputs
+- testing/verification
+- check permissions
+see PEP318
+
+python has a lot of implementaions, just pick one (or make one) for your use case
+cpython is the most common
+in every implementation, everything is an object, even the basic datatypes
+"str" is not really a null terminated c-string, but an object with some attributes + methods that is named "str"
+same for int, float, ...,and even the function

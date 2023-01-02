@@ -1,0 +1,33 @@
+vscode extention 'LaTeX Workshop' + https://miktex.org/download should do it
+some TeX programs need to be added to the path
+it is a type setting program, may ways to run
+reuse, reuse, reuse: https://www.overleaf.com/latex/templates
+pdf is readable on most platforms
+
+[cmd] + [enter] is needed in .tex to [enter] 'new line' for the extenstion
+* start miktex console before vscode...
+
+you should know VIM also...
+https://github.com/VSCodeVim/Vim
++ vs code VIM extension
+
+there is probably some truth to VIM
+
+i = insert mode
+[esc] = back to normal mode
+k = move up 1 line 
+j = move down 1 line
+l = right
+(happy medium is to just use the key bindings) 
+...
+in a real terminal :q will quit
+
+preamble 
+    documentClass{}    // article, beamer,...
+    packages           // many...amsmath, amssymb, 
+document enviornment
+    \begin{document}
+    content
+    \end{document}
+
+

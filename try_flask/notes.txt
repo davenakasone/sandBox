@@ -1,0 +1,12 @@
+https://pypi.org/project/Flask/
+https://flask.palletsprojects.com/en/2.2.x/installation/
+https://jinja.palletsprojects.com/en/3.1.x/
+https://werkzeug.palletsprojects.com/en/2.2.x/
+https://wsgi.readthedocs.io/en/latest/
+
+Jinja is a template engine (comes with MarkupSafe to avoid injection attacks)
+Werkzeug is a WSGI (web server gateway interface) toolkit
+Flask should be simple + used some important insights from Django
+there are a lot of other dependencies, but it is fairly lite
+
+
