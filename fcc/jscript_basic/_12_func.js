@@ -14,11 +14,17 @@
     avoid mutations, don't change things
     be explicit (make the function take args)
 
-    < 1 >  avoid direct changes
-    < 2 >  deep copy args
-    < 3 >  map(), with 1 arg
-    < 4 >  filter(), with 1 arg
-    < 5 >  slice(), with 2 arg
+    < 1 >   avoid direct changes
+    < 2 >   deep copy args
+    < 3 >   map(), with 1 arg
+    < 4 >   filter(), with 1 arg
+    < 5 >   slice(), with 2 arg
+    < 6 >   concat(), does not mutate
+    < 7 >   reduce(), basic method (no mutate)
+    < 8 >   sort(), numeric (mutates)
+    < 9 >   sort(), chars (mutates)
+    < 10 >  sort(), no mutate, option 1
+    < 11 >  sort(), no mutate, option 2
 */
 console.clear();
 console.log("\n");
@@ -76,10 +82,50 @@ console.log(`const: ${g6a}  ,  const: ${g6b}  ,  changed: ${g6c}`);
 console.log("\n");
 
 // < 7 > reduce(), basic method
+// anyArr.reduce(function(total, currentVal, curentIdx, arr), initialVal)
+// total: initial value or callback return value
+// currentVal: value of current element
+// currendIdx: optional, index of current element
+// arr: optional, array current element belongs to
+// * first callback does not return (will use elm[0] by default)
+// * supply an inital value to use, startes reducing at elm[0]
+let g7 = [1, 2, 3, 4];
+let g7r = g7.reduce((accum, cval) => {return accum+cval;}, 0); 
+console.log(`original: ${g7}  ,  sum: ${g7r}`);
+console.log("\n");
 
+// < 8 > sort(), numeric (mutates)
+let g8 = [1, 5, 2, 3, 4];
+console.log(`original: ${g8}`);
+g8.sort((a, b) => {return a-b;});
+console.log(`sorted  : ${g8}`);
+console.log("\n");
 
+// < 9 > sort(), chars (mutates)
+let g9 = ['z', 's', 'l', 'h', 'b'];
+console.log(`original: ${g9}`);
+g9.sort((a, b) => {return (a===b) ? 0 : (a < b) ? -1 : 1;});
+console.log(`sorted  : ${g9}`);
+console.log("\n");
 
+//  < 10 >  sort(), no mutate, option 1
+g10 = [5, 6, 3, 2, 9];
+g10s = [].concat(g10).sort((a,b)=>{return a-b;})
+console.log(`original: ${g10}`);
+console.log(`sorted  : ${g10s}`);
+console.log("\n");
 
+//  < 11 >  sort(), no mutate, option 2
+function g11arr(arr)
+{
+    let temp = [...arr];
+    return temp.sort((a,b)=>{return a-b;})
+}
+let g11 = [8, 6, 3, 2, 9];
+let g11s = g11arr(g11);
+console.log(`original: ${g11}`);
+console.log(`sorted  : ${g11s}`);
+console.log("\n");
 
 
 ////////~~~~~~~~~END>  _12_func.js

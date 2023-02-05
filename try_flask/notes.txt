@@ -9,4 +9,12 @@ Werkzeug is a WSGI (web server gateway interface) toolkit
 Flask should be simple + used some important insights from Django
 there are a lot of other dependencies, but it is fairly lite
 
+reset the environment to your app everytime
+    $ FLASK_APP=app.py flask run
 
+$ sudo lsof -i -P | grep LISTEN | grep 5000
+    If ControlCe is returned (Apple's Control Center) is running. To turn it OFF go to:
+        Apple/System Preferences/Sharing/ and turn OFF AirPlay Receiver
+
+chrome:
+settings > clear browsing data > (only cached images and files form last hour...)

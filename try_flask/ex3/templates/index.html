@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Talker</title>
+        <!---<link rel="stylesheet" href="../static/css/styles.css">-->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    </head>
+    <body>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png">
+        <br>
+        <form action="greet" method="post">
+            {% for message in get_flashed_messages()%}
+                <p> {{message}} </p>
+            {% endfor %}
+        <p>Give me your name:</p>
+        <input type="text" name="name_input">
+        <br>
+        <input type="submit" value="GREET" id="greet">
+    </body>
+</html>
