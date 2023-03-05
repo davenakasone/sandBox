@@ -1,0 +1,27 @@
+cmake is a little better than make and common enough so everyone will probably know it
+it does makes you look less incompetent than you would if a Makefile was used
+
+links:
+https://cmake.org/
+https://github.com/Kitware/CMake
+https://cmake.org/cmake/help/book/mastering-cmake/
+https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#manual:cmake-language(7)
+https://code.visualstudio.com/docs/cpp/cmake-linux
+
+notes:
+use "out-of-source" builds (don't mix compilied binaries with source code)
+CMakeLists.txt is a text file that contains cmake's language "cmake-language"
+cmake, ccmake, and cmake-gui are all options for building
+
+Any build configuration, by default:
+Debug- has the basic debug flags turned on. 
+Release- has the basic optimizations turned on. 
+MinSizeRel- has flags that produce the smallest object code, but not necessarily the fastest code. 
+RelWithDebInfo- builds an optimized build with debug information as well.
+
+cmake variables being with CMAKE_
+When you set a variable, it is visible to:
+- current CMakeLists file or function
+- any subdirectory’s CMakeLists files
+- any functions or macros that are invoked
+- any files that are included using the include command

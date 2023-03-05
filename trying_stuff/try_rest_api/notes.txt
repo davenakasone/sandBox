@@ -1,0 +1,30 @@
+API: application program interface
+    a way >=2 pieces of software can communicate with eachother
+
+ABI: application binary interface
+    a way >=2 compiled binaries can communicate with eachother
+
+Python to JS is a good example of an API
+the server runs JS, client consumes with Python
+
+SOAP is xml, and usually old...tags
+REST is JSON, and usually prefered...key:value pairs (dict in python, object in js)
+    representitive state transfer
+
+JSON is the language
+API is the vocabulary
+end points are where you can request
+expose end points rather than giving guy access to DB
+security is important, don't let big jumps into your DB
+one good front end can do a lot for other applications
+    good way to ensure synchronization
+
+CRUD(create[post] read[get] update[put] delete[delete]) // things to do with DB
+GET- retrieve data
+POST- write new data (add a resource) # adding something new is not guarunteed to be executed a lot without duplicates
+DELETE- delete data
+PUT- write data (update/replace) # should do same thing every time (doesn't hurt resource)
+PATCH- replace different fields of a resource (or just use a new version)
+
+"idempotent" the argument between POST and PUT...could be better just using post
+

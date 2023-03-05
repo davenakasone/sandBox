@@ -1,0 +1,16 @@
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/CMakeFiles/Tutorial.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/CMakeFiles/test.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/CMakeFiles/edit_cache.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/CMakeFiles/rebuild_cache.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/CMakeFiles/list_install_components.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/CMakeFiles/install.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/CMakeFiles/install/local.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/CMakeFiles/install/strip.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/MathFunctions/CMakeFiles/MathFunctions.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/MathFunctions/CMakeFiles/test.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/MathFunctions/CMakeFiles/edit_cache.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/MathFunctions/CMakeFiles/rebuild_cache.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/MathFunctions/CMakeFiles/list_install_components.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/MathFunctions/CMakeFiles/install.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/MathFunctions/CMakeFiles/install/local.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step5/build/MathFunctions/CMakeFiles/install/strip.dir

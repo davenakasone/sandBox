@@ -1,0 +1,3 @@
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/ex1/build/CMakeFiles/test.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/ex1/build/CMakeFiles/edit_cache.dir
+/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/ex1/build/CMakeFiles/rebuild_cache.dir
