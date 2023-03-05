@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Darwin-c++"
+	BuildStamp="20230305-1602-Experimental"
+	Name="davids-mbp-2.lan"
+	Generator="ctest-3.25.2"
+	CompilerName="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"
+	CompilerVersion="14.0.0.14000029"
+	OSName="macOS"
+	Hostname="davids-mbp-2.lan"
+	OSRelease="12.6.3"
+	OSVersion="21G419"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="70"
+	ProcessorCacheSize="32768"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="1024"
+	TotalPhysicalMemory="16384"
+	LogicalProcessorsPerPhysical="8"
+	ProcessorClockFrequency="2500"
+	>
+	<Configure>
+		<StartDateTime>Mar 05 11:02 EST</StartDateTime>
+		<StartConfigureTime>1678032121</StartConfigureTime>
+		<ConfigureCommand>"/usr/local/Cellar/cmake/3.25.2/bin/cmake" "/Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step6"</ConfigureCommand>
+		<Log>-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/davidnakasone/Desktop/sandBox/trying_stuff/try_cmake/cmake-3.26.0-rc5-tutorial-source/Step6/build
+</Log>
+		<ConfigureStatus>0</ConfigureStatus>
+		<EndDateTime>Mar 05 11:02 EST</EndDateTime>
+		<EndConfigureTime>1678032122</EndConfigureTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Configure>
+</Site>
