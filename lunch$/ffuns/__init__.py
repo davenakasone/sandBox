@@ -19,6 +19,9 @@ from .lumpsum_r import lumpsum_r
 # annuities
 from .annuity_pv import annuity_pv
 from .annuity_fv import annuity_fv
+from .annuity_r_given_fv import annuity_r_given_fv
 
+# mortgages
+from .amortize_point import amortize_point
 
 ########~~~~~~~~END>  __init__.py

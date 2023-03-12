@@ -38,7 +38,7 @@ def annuity_fv\
     
     # guards
     if rate_per_period < 0 :
-        print(f"{STR_NEGATIVE_ARGUMENT}rate_per_period = {rate_per_period:0.3f}")
+        print(f"{STR_NEGATIVE_ARGUMENT}rate_per_period = {rate_per_period:.3%}")
         return BAD_ARGUMENT_FLOAT
     if rate_per_period > WARN_RATE_LEVEL :
         print(f"{STR_WARN_RATE_LEVEL}rate_per_period = {rate_per_period:0.3f}")
