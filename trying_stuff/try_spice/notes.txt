@@ -1,0 +1,15 @@
+need NGspice, Xyce, ...
+
+LINKS:
+https://xyce.sandia.gov/
+https://ngspice.sourceforge.io/
+
+https://math-atlas.sourceforge.net/
+https://netlib.org/lapack/
+https://netlib.org/blas/
+
+https://pyspice.fabrice-salvaire.fr/
+https://pypi.org/project/PySpice/
+
+https://pypi.org/project/PyLTSpice/
+https://pyltspice.readthedocs.io/en/latest/
