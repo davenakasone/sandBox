@@ -15,12 +15,10 @@
 """
 
 from ._ffun_config import BAD_ARGUMENT_FLOAT
-from ._ffun_config import WARN_RATE_LEVEL
-from ._ffun_config import STR_WARN_RATE_LEVEL
 from ._ffun_config import STR_NEGATIVE_ARGUMENT
 
 
-def lumpsum_r\
+def lumpsum_r_given_n_pv_fv\
 (
     number_of_periods : float,
     present_value     : float,
@@ -49,4 +47,4 @@ def lumpsum_r\
     return rate_per_period
 
 
-########~~~~~~~~END>  lumpsum_r.py
+########~~~~~~~~END>  lumpsum_r_given_n_pv_fv.py

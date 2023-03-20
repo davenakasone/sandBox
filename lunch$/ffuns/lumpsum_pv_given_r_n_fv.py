@@ -28,7 +28,7 @@ from ._ffun_config import STR_WARN_RATE_LEVEL
 from ._ffun_config import STR_NEGATIVE_ARGUMENT
 
 
-def lumpsum_pv\
+def lumpsum_pv_given_r_n_fv\
 (
     rate_per_period   : float,
     number_of_periods : float,
@@ -62,4 +62,4 @@ def lumpsum_pv\
     return present_value
 
 
-########~~~~~~~~END>  lumpsum_pv.py
+########~~~~~~~~END>  lumpsum_pv_given_r_n_fv.py

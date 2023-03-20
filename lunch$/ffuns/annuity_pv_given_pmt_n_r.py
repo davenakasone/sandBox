@@ -26,7 +26,7 @@ from ._ffun_config import STR_WARN_RATE_LEVEL
 from ._ffun_config import STR_NEGATIVE_ARGUMENT
 
 
-def annuity_pv\
+def annuity_pv_given_pmt_n_r\
 (
     payment           : float,
     number_of_periods : float,
@@ -64,4 +64,4 @@ def annuity_pv\
     return present_value
 
 
-########~~~~~~~~END>  annuity_pv.py
+########~~~~~~~~END>  annuity_pv_given_pmt_n_r.py

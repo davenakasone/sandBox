@@ -10,18 +10,27 @@
 """
 
 
-# lump sums
-from .lumpsum_pv import lumpsum_pv
-from .lumpsum_fv import lumpsum_fv
-from .lumpsum_n import lumpsum_n
-from .lumpsum_r import lumpsum_r
+# constants
+from ._ffun_config import ALLOWABLE_DIFFERENCE
 
-# annuities
-from .annuity_pv import annuity_pv
-from .annuity_fv import annuity_fv
-from .annuity_r_given_fv import annuity_r_given_fv
+# lump sums
+from .lumpsum_pv_given_r_n_fv import lumpsum_pv_given_r_n_fv
+from .lumpsum_fv_given_r_n_pv import lumpsum_fv_given_r_n_pv
+from .lumpsum_n_given_r_pv_fv import lumpsum_n_given_r_pv_fv
+from .lumpsum_r_given_n_pv_fv import lumpsum_r_given_n_pv_fv
+
+# ordinary annuities
+from .annuity_pv_given_pmt_n_r import annuity_pv_given_pmt_n_r
+from .annuity_fv_given_pmt_n_r import annuity_fv_given_pmt_n_r
+from .annuity_r_given_pmt_n_fv import annuity_r_given_pmt_n_fv
+from .annuity_r_given_pmt_n_pv import annuity_r_given_pmt_n_pv
+from .annuity_n_given_pmt_r_fv import annuity_n_given_pmt_r_fv
+from .annuity_n_given_pmt_r_pv import annuity_n_given_pmt_r_pv
+from .annuity_pmt_given_n_r_fv import annuity_pmt_given_n_r_fv
+from .annuity_pmt_given_n_r_pv import annuity_pmt_given_n_r_pv
 
 # mortgages
-from .amortize_point import amortize_point
+from .amortize_point_given_p_r_n_pd import amortize_point_given_p_r_n_pd
+
 
 ########~~~~~~~~END>  __init__.py
