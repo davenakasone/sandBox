@@ -30,7 +30,7 @@ def runipynb(
     """
     run an ipynb
     """
-    
+
     if nb_params is None :
         pm.execute_notebook(
             input_path=nb_input,

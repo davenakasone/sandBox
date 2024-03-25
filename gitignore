@@ -1,0 +1,13 @@
+*.ipynb_checkpoints/*
+*~
+.*.swp
+.git
+__pycache__/*
+venv/*
+*.egg-info/*
+*.dist-info/*
+build/*
+.pytest_cache/*
+coverage.xml
+*.log
+.vscode/*
